@@ -1,0 +1,253 @@
+/* ===== BLOCK 2: About ===== */
+.about {
+  background: #fff;
+  /* высота визуально под макет 1920: 557 */
+  padding: 100px 0; /* сверху/снизу — чтобы вместе с контентом давало нужную высоту */
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.about__inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr; /* текст / картинка */
+  align-items: start;
+  gap: 40px;
+}
+
+.about__col--text {
+  max-width: 680px;
+  text-align: left;
+}
+
+.about__eyebrow {
+  margin: 0 0 20px 0;
+  font-weight: 700;
+  font-size: 15.88px;
+  line-height: 22.4px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #0097dc;
+}
+
+.about__title {
+  margin: 17px 0 20px; /* 17px между синим текстом и заголовком */
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 44px;
+  letter-spacing: -1px;
+  color: #0c2340;
+  max-width: 651px; /* 1920: ширина заголовка */
+  font-family: 'Helvetica', sans-serif;
+}
+
+.about__copy {
+  margin-top: 18px;
+  font-size: 16.6px;
+  line-height: 25.6px;
+  color: #0c2340;
+  /* страховка от переполнения строк на узких экранах */
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.about__copy p {
+  margin: 0 0 10px;
+}
+
+.about__accent {
+  font-weight: 700;
+  color: #0097dc; /* span-акцент как в фигме */
+}
+
+.about__btn {
+  height: 40px;
+  border-radius: 60px;
+  padding: 0 20px;
+  margin-top: 28px;
+  min-width: 114px; /* 113.92 по фигме */
+  max-width: 190px;
+}
+
+/* Картинка справа */
+.about__col--media {
+  justify-self: end;
+  overflow: hidden; /* чтобы ничего не вылезало за контейнер */
+}
+
+.about__img {
+  display: block;
+  width: 500px; /* десктоп как у тебя */
+  height: auto;
+  max-width: 100%; /* страховка на любых брейкпоинтах */
+}
+
+/* если используешь .img-service где-то рядом — оставляю как было */
+.img-service {
+  width: 680px;
+}
+
+/* ---------- ≤1480 ---------- */
+@media (max-width: 1480px) {
+  .about {
+    padding: 100px 0;
+  }
+
+  .about__inner {
+    grid-template-columns: 1fr 0.95fr;
+    gap: 32px;
+  }
+
+  .about__title {
+    max-width: 488px;
+  } /* 487.34 по фигме */
+
+  /* На 1440 твоя картинка больше — оставляем, но ограничиваем контейнером */
+  .about__img {
+    width: 592px;
+    height: auto;
+    margin-top: 12px;
+    max-width: 100%;
+  }
+}
+
+/* ---------- ≤1060 (≈1024 макет) ---------- */
+@media (max-width: 1060px) {
+  :root {
+    --container: 960px;
+  }
+
+  .container {
+    width: min(var(--container), calc(100% - 32px));
+  } /* 16px края */
+
+  .about {
+    padding: 100px 0;
+  }
+
+  .about__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .about__col--text {
+    max-width: unset;
+  }
+
+  .about__img {
+    width: 410px; /* 410×403 по фигме */
+    height: auto;
+    margin-top: 0;
+    justify-self: end;
+    max-width: 100%; /* не шире колонки */
+  }
+
+  .about__btn {
+    margin-top: 24px;
+  }
+}
+
+/* ---------- ≤800 (≈768 макет) ---------- */
+@media (max-width: 800px) {
+  :root {
+    --container: 704px;
+  }
+
+  .container {
+    width: min(var(--container), calc(100% - 32px));
+  } /* 16px края */
+
+  .about {
+    padding: 44px 0 100px;
+  }
+
+  .about__inner {
+    grid-template-columns: 1fr;
+  } /* стек */
+
+  .about__col--media {
+    justify-self: center;
+    margin-top: 36px;
+  }
+
+  /* КРИТИЧНО: на ~500px раньше вылазило.
+     Делаем картинку адаптивной и не шире контейнера */
+  .about__img {
+    width: min(481px, 100%);
+    height: auto;
+    margin-top: 0;
+  }
+}
+
+/* ---------- доп. подстройка ≤570 ---------- */
+@media (max-width: 570px) {
+  /* немного уменьшаем заголовок, чтобы оставался 2–3 строки */
+  .about__title {
+    font-size: 34px;
+    line-height: 40px;
+    max-width: 100%;
+  }
+
+  .about__copy {
+    font-size: 16.2px;
+    line-height: 25.2px;
+    max-width: 100%;
+  }
+
+  .about__img {
+    width: min(420px, 100%);
+  }
+}
+
+/* ---------- ≤430 (420–430 твоя проблемная зона) ---------- */
+@media (max-width: 430px) {
+  :root {
+    --container: 326px;
+  }
+
+  .container {
+    width: min(var(--container), calc(100% - 24px));
+  } /* чуть больше поля на сверхузких */
+
+  .about {
+    padding: 84px 0 96px;
+  }
+
+  .about__eyebrow {
+    font-size: 15.5px;
+  }
+
+  .about__title {
+    font-size: 32px;
+    line-height: 36px;
+    margin-top: 30px; /* как в макете */
+    max-width: 100%; /* РАНЬШЕ 280px — из-за этого текст мог «толкаться» с паддингами */
+  }
+
+  .about__copy {
+    margin-top: 16px;
+    font-size: 16.1px;
+    line-height: 25.2px;
+    max-width: 100%; /* РАНЬШЕ было 355px — шире контейнера → срезало справа */
+  }
+
+  .about__btn {
+    margin-top: 20px;
+    width: 114px; /* фикс ширины кнопки из фигмы */
+  }
+
+  .about__col--media {
+    margin-top: 36px;
+    justify-self: start;
+  }
+
+  .about__img {
+    width: min(355px, 100%); /* РАНЬШЕ фикс 355px → могло быть шире контейнера */
+    height: auto;
+  }
+}
+
+/* страховка очень узких */
+@media (max-width: 340px) {
+  .about__img {
+    width: 100%;
+  }
+}

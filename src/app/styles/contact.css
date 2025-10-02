@@ -1,0 +1,473 @@
+/* ===== BLOCK 8: Контакты ===== */
+.contact {
+  padding: 120px 0 50px;
+  background: #fff;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.contact__inner {
+  /* 1920/1440: контейнер 1280, по центру */
+  width: min(1280px, calc(100% - 30px));
+  margin-inline: auto;
+
+  display: grid;
+  grid-template-columns: 1fr 488px;
+  column-gap: 200px;
+  align-items: start;
+}
+
+/* Левая колонка */
+.contact__title {
+  margin: 0 0 15px;
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 68px;
+  letter-spacing: -0.03em; /* -3% */
+  color: #0c2340;
+}
+
+.contact__lead {
+  margin: 0 0 15px;
+  max-width: 592px;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: -0.004em;
+  color: #646a69;
+  text-align: left;
+}
+
+.contact__email {
+  margin-top: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: -0.004em;
+  color: #252525;
+}
+.contact__email-ic {
+  flex: 0 0 20px;
+}
+
+.contact-form {
+  width: 488px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 0 32px 32px 32px;
+  box-shadow: 0 0 0 1px rgba(18, 105, 63, 0.08), 0 1px 2px 0 rgba(167, 185, 164, 0.16),
+    0 24px 32px -12px rgba(54, 74, 54, 0.24);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.contact-form__topline {
+  height: 4px;
+  background: #0097dc;
+  margin: 0 -32px 32px;
+}
+
+.contact-form__title {
+  margin: 0 0 32px;
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: -0.01em;
+  color: #1d1f1e;
+}
+
+/* Контейнер полей */
+.contact-form__fields {
+  width: 424px;
+  display: grid;
+  gap: 24px;
+  box-sizing: border-box;
+}
+
+/* поле */
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.field__label {
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.004em;
+  color: #1d1f1e;
+  text-align: left;
+}
+
+.field__input {
+  width: 424px;
+  height: 48px;
+  padding: 0 14px;
+  border-radius: 10px;
+  border: 1px solid #d6d8dd;
+  background: #fff;
+  color: #1d1f1e;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.004em;
+  outline: none;
+  box-sizing: border-box;
+}
+.field__input:focus {
+  border-color: #0097dc;
+  box-shadow: 0 0 0 3px rgba(0, 151, 220, 0.15);
+}
+
+/* textarea */
+.field__textarea {
+  height: auto;
+  padding: 12px 14px;
+  resize: vertical;
+  min-height: 96px;
+}
+
+/* select + стрелка */
+.field--select {
+  position: relative;
+}
+.field--select .field__input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 36px;
+}
+.field__chev {
+  position: absolute;
+  right: 12px;
+  bottom: 16px;
+  pointer-events: none;
+}
+
+/* Drag & Drop */
+.upload {
+}
+.upload__box {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+
+  width: 424px;
+  height: 180px;
+  border-radius: 8.66px;
+  border: 1px dashed #63666d;
+  background: #f8f7ff;
+  padding: 50px 32px;
+  gap: 16px;
+
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+  box-sizing: border-box;
+}
+.upload__box:hover {
+  border-color: #0097dc;
+}
+.upload__box.is-dragover {
+  border-color: #0097dc;
+  background: #eef8ff;
+}
+.upload__icon {
+  display: block;
+}
+.upload__title {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 200%;
+  color: #0097dc;
+}
+.upload__hint {
+  margin: -8px 0 0 0;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-size: 13px;
+  color: #646a69;
+}
+.upload__file {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-size: 14px;
+  color: #1d1f1e;
+}
+
+/* Кнопка */
+.contact-form__btn {
+  display: block;
+  width: 424px;
+  height: 48px;
+  margin-top: 32px;
+  border-radius: 200px;
+  border: none;
+  background: #0097dc;
+  color: #fff;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.004em;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease;
+  box-sizing: border-box;
+}
+.contact-form__btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 151, 220, 0.25);
+}
+.contact-form__btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* ---------- 1440 ---------- */
+@media (max-width: 1480px) {
+  .contact__inner {
+    width: min(1280px, calc(100% - 30px));
+    grid-template-columns: 1fr 488px;
+    column-gap: 200px;
+  }
+}
+
+/* ---------- 1024 ---------- */
+@media (max-width: 1060px) {
+  .contact__inner {
+    width: min(932px, calc(100% - 30px));
+    grid-template-columns: 1fr 488px;
+  }
+  .contact__lead {
+    max-width: 424px;
+  }
+}
+
+/* ---------- 768 / мобильная колонка ---------- */
+/* ИСПРАВЛЕНА СТРОКА: width: min(736px, calc(100% - 176px)) → симметричные поля */
+@media (max-width: 800px) {
+  .contact__inner {
+    width: min(736px, calc(100% - 32px)); /* по 16px слева/справа — больше не «косит» вправо */
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+    justify-items: stretch; /* растягиваем по ширине, не центрируем */
+  }
+
+  .contact__title,
+  .contact__lead,
+  .contact__email {
+    text-align: left;
+  }
+
+  /* форма и всё внутри — флюидно на 100% */
+  .contact-form {
+    width: 100%;
+    max-width: 488px; /* не шире десктопной карты */
+    padding: 0 24px 24px;
+  }
+  .contact-form__topline {
+    margin: 0 -24px 24px;
+  }
+
+  .contact-form__fields,
+  .field__input,
+  .upload__box,
+  .contact-form__btn {
+    width: 100%;
+  }
+}
+
+/* ---------- 570: страховка для проблемной зоны ---------- */
+@media (max-width: 570px) {
+  .contact__inner {
+    width: calc(100% - 32px);
+  } /* те же 16px поля */
+  .contact-form {
+    max-width: 100%;
+  }
+}
+
+/* ---------- 420 ---------- */
+@media (max-width: 420px) {
+  .contact {
+    padding: 110px 0 50px;
+  }
+
+  .contact__inner {
+    width: calc(100% - 30px); /* 15px поля как и было в блоках */
+    grid-template-columns: 1fr;
+  }
+
+  .contact__title {
+    font-size: 32px;
+    line-height: 48px;
+    text-align: left;
+  }
+
+  .contact__lead {
+    max-width: 100%;
+    font-size: 16.8px;
+    line-height: 26px;
+    text-align: left;
+  }
+
+  .contact__email {
+    font-size: 16.8px;
+    line-height: 26px;
+  }
+
+  .contact-form {
+    width: 100%;
+    padding: 0 16px 20px; /* компактнее паддинги на очень узких */
+  }
+  .contact-form__topline {
+    margin: 0 -16px 20px;
+  }
+
+  .contact-form__fields,
+  .field__input,
+  .upload__box,
+  .contact-form__btn {
+    width: 100%;
+  }
+}
+
+/* ---------- 370: самая узкая страховка ---------- */
+@media (max-width: 370px) {
+  .contact__inner {
+    width: calc(100% - 24px);
+  } /* поля по 12px */
+  .contact-form {
+    padding: 0 12px 18px;
+  }
+  .contact-form__topline {
+    margin: 0 -12px 18px;
+  }
+}
+@media (max-width: 1000px) and (min-width: 801px) {
+  .contact__inner {
+    /* больше боковых полей, контент компактнее и по центру */
+    width: min(960px, calc(100% - 60px));
+    grid-template-columns: minmax(360px, 1fr) minmax(420px, 488px);
+    column-gap: clamp(28px, 6vw, 72px);
+    justify-content: center; /* центрируем всю сетку */
+    align-items: start;
+  }
+
+  .contact-form {
+    width: 100%;
+    max-width: 488px; /* фикс по макету, но без “прилипания” к правому краю */
+  }
+
+  .contact__lead {
+    max-width: 520px;
+  } /* текст не слишком узкий */
+}
+
+/* 2) 800↓: одна колонка — всё по центру (как просил на скрине 720) */
+@media (max-width: 800px) and (min-width: 620px) {
+  .contact__inner {
+    width: min(736px, calc(100% - 32px)); /* симметричные поля */
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+    justify-items: center; /* центрируем элементы по оси X */
+    text-align: center;
+  }
+
+  .contact__title,
+  .contact__lead,
+  .contact__email {
+    text-align: center;
+  }
+
+  .contact-form {
+    width: 100%;
+    max-width: 560px; /* слегка шире, чтобы оптика была как в макете */
+    margin-inline: auto;
+  }
+
+  .contact-form__fields,
+  .field__input,
+  .upload__box,
+  .contact-form__btn {
+    width: 100%;
+  }
+}
+
+/* 3) 570↓: возвращаем левое выравнивание и максимально флюидную ширину */
+@media (max-width: 570px) {
+  .contact__inner {
+    width: calc(100% - 32px); /* по 16px с каждого края */
+    justify-items: stretch;
+    text-align: left;
+  }
+
+  .contact__title,
+  .contact__lead,
+  .contact__email {
+    text-align: left;
+  }
+
+  .contact-form {
+    max-width: 100%;
+    padding: 0 16px 20px;
+  }
+  .contact-form__topline {
+    margin: 0 -16px 20px;
+  }
+
+  .contact-form__fields,
+  .field__input,
+  .upload__box,
+  .contact-form__btn {
+    width: 100%;
+  }
+}
+
+/* 4) 370↓: самые узкие — ещё больше внутренние поля, чтобы ничего не срезало */
+@media (max-width: 370px) {
+  .contact__inner {
+    width: calc(100% - 24px);
+  } /* по 12px края */
+  .contact-form {
+    padding: 0 12px 18px;
+  }
+  .contact-form__topline {
+    margin: 0 -12px 18px;
+  }
+}
+@media (max-width: 1000px) and (min-width: 801px) {
+  .contact__inner {
+    /* сетка по центру, правую колонку допускаем сужаться, но красиво */
+    width: min(960px, calc(100% - 60px));
+    grid-template-columns: minmax(360px, 1fr) minmax(360px, 488px);
+    column-gap: clamp(28px, 6vw, 72px);
+    justify-content: center;
+  }
+
+  /* карта формы не прилипает и не режет контент */
+  .contact-form {
+    width: 100%;
+    max-width: 488px;
+    padding: 0 24px 24px; /* было 32px — уменьшили, чтобы влезал контент */
+  }
+  .contact-form__topline {
+    /* подгоняем под новые паддинги */
+    margin: 0 -24px 24px;
+  }
+
+  /* ГЛАВНОЕ: внутрянка на 100% колонки, не фикс 424px */
+  .contact-form__fields,
+  .field__input,
+  .upload__box,
+  .contact-form__btn {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

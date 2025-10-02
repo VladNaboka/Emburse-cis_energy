@@ -1,0 +1,19 @@
+/* global resets can go here if needed */
+/* @import '../app/styles/styles.css';
+@import '../app/styles/header.css';
+@import '../app/styles/hero.css';
+@import '../app/styles/about.css';
+@import '../app/styles/services.css';
+@import '../app/styles/why.css';
+@import '../app/styles/logos.css';
+@import '../app/styles/why-cis.css';
+@import '../app/styles/b7.css';
+@import '../app/styles/contact.css';
+@import '../app/styles/footer'; */
+html {
+  scroll-behavior: smooth;
+}
+html.is-locked,
+html.is-locked body {
+  overflow: hidden;
+}

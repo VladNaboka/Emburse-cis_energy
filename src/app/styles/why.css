@@ -1,0 +1,276 @@
+/* ===== BLOCK 4: Why Emburse (quote inline + 30px gap, fixed) ===== */
+.why {
+  background: #fff;
+  padding: 56px 0;
+}
+.why__inner {
+  width: min(var(--container), 92vw);
+  margin-inline: auto;
+}
+.why__head {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.why__eyebrow {
+  margin: 0 0 20px;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 15.5px;
+  line-height: 22.4px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #0097dc;
+}
+.why__title {
+  margin: 0;
+  font-family: 'Source Serif 4', 'Source Serif Pro', Georgia, serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 44px;
+  letter-spacing: -1px;
+  color: #0c2340;
+}
+
+/* сетка блока */
+.why__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+
+/* ===== Карточка =====
+   2 колонки (кавычка + контент), 2 строки (текст + подвал).
+   !!! column-gap = 0 — чтобы низ можно было выровнять точно на 15px. */
+.why-card {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  grid-template-rows: auto auto; /* r1 — текст; r2 — подвал */
+  column-gap: 0;
+  row-gap: 30px; /* нижняя часть на 30px ниже текста */
+  padding: 25px;
+  border-radius: 12px;
+  background: #f4f5f6;
+  overflow: hidden;
+  transition: transform 0.18s ease;
+}
+.why-card--v1 {
+  background: linear-gradient(45deg, #f4f5f6 0%, #f4f5f6 50%, #f4edfa 100%);
+}
+.why-card--v2 {
+  background: linear-gradient(45deg, #f4f5f6 0%, #f4f5f6 50%, #e0eefe 100%);
+}
+.why-card--v3 {
+  background: linear-gradient(45deg, #f4f5f6 0%, #f4f5f6 50%, #c7fff8 100%);
+}
+.why-card:hover {
+  transform: translateY(-2px);
+}
+
+/* кавычка — слева от текста */
+.why-card__q {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+  justify-self: start;
+  margin-top: 2px;
+  font-family: 'Source Serif 4', 'Source Serif Pro', Georgia, serif;
+  font-weight: 900;
+  font-size: 54px;
+  line-height: 1;
+  color: #7f3f98;
+}
+.why-card--v2 .why-card__q {
+  color: #005eb8;
+}
+.why-card--v3 .why-card__q {
+  color: #00a19d;
+}
+
+/* текст — в колонке 2; включаем переносы, чтобы ничего не вылезало */
+.why-card__content {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+  min-width: 0; /* важно для гридов */
+}
+.why-card__text {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 16.03px;
+  line-height: 25.6px;
+  color: #0c2340;
+  font-weight: 400;
+  overflow-wrap: anywhere; /* переносим длинные слова/фразы */
+  word-break: normal;
+}
+.why-card__text--bold {
+  font-weight: 700;
+}
+.why-card--v3 .why-card__text span {
+  font-weight: 700;
+}
+
+/* ===== Низ карточки (аватар + подпись в одну линию) ===== */
+.why-card__avatar {
+  grid-column: 2;
+  grid-row: 2; /* тот же столбец, что и текст */
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  object-fit: cover;
+  align-self: center; /* по центру относительно текста справа */
+  justify-self: start;
+  margin-right: 15px; /* расстояние между фото и текстом = 15px */
+}
+
+/* подписи рядом с фото */
+.why-card__person {
+  grid-column: 2;
+  grid-row: 2;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 6px;
+  align-self: center; /* вертикально по центру фото */
+  justify-self: start;
+  margin-left: 55px; /* 40px фото + 15px требуемый зазор */
+  min-width: 0;
+}
+.why-card__name {
+  margin: 0;
+  color: #0c2340;
+  font-family: 'Inter';
+  font-weight: 700;
+  font-size: 14.5px;
+  line-height: 22.4px;
+}
+.why-card__role {
+  margin: 0;
+  color: #0c2340;
+  font-family: 'Inter';
+  font-weight: 400;
+  font-size: 13.02px;
+  line-height: 18px;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+/* ---------- 1440 ---------- */
+@media (max-width: 1480px) {
+  .why__grid {
+    gap: 32px;
+  }
+  .why-card__role {
+    font-size: 13.23px;
+  }
+}
+
+/* ---------- 1024 ---------- */
+@media (max-width: 1060px) {
+  :root {
+    --container: 960px;
+  }
+  .container,
+  .why__inner {
+    width: min(var(--container), calc(100% - 32px));
+  }
+  .why__grid {
+    gap: 24px;
+  }
+  .why-card__text {
+    font-size: 16.17px;
+  }
+  .why-card__role {
+    font-size: 13.23px;
+  }
+}
+
+/* ---------- 768 ---------- */
+@media (max-width: 800px) {
+  :root {
+    --container: 704px;
+  }
+  .container {
+    width: min(var(--container), calc(100% - 32px));
+  }
+  .why {
+    padding: 48px 0;
+  }
+  .why__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .why-card__text {
+    font-size: 16.31px;
+  }
+}
+
+/* ---------- 390 ---------- */
+@media (max-width: 420px) {
+  .why__inner {
+    width: 100%;
+    padding: 0 16px;
+  }
+  .why__head {
+    text-align: left;
+  }
+  .why__title {
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  .why__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .why-card__text {
+    font-size: 16.31px;
+  }
+}
+@media (max-width: 560px) {
+  .why-card {
+    grid-template-columns: 22px 1fr; /* немного уже колонка с кавычкой */
+    row-gap: 16px; /* поменьше зазор между текстом и «низом» */
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  /* аватар отдельной строкой во всю ширину карточки */
+  .why-card__avatar {
+    grid-column: 1 / -1; /* занять обе колонки */
+    grid-row: 2;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    justify-self: start;
+    align-self: start;
+  }
+
+  /* подписи — на следующей строке, без левых «магических» отступов */
+  .why-card__person {
+    grid-column: 1 / -1; /* занять обе колонки */
+    grid-row: 3;
+    margin: 8px 0 0 0;
+    display: grid;
+    gap: 4px;
+    min-width: 0;
+  }
+
+  /* подстраховка от длинных должностей/имен */
+  .why-card__name,
+  .why-card__role {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+}
+
+/* 460↓ — если «чуть больше 420px» всё ещё тесно, раскладываем сетку блока в одну колонку чуть раньше */
+@media (max-width: 460px) {
+  .why__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .why-card__text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
