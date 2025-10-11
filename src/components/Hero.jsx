@@ -23,7 +23,7 @@ export default function Hero() {
           {t('title_blue')}
         </h1>
         <div className="hero__ctas">
-          <a className="btn-cta hero__btn" href="#contact">
+          <a className="btn-cta hero__btn" href="/pso">
             {t('cta')}
           </a>
           <a className="btn_demo" href="#contact">

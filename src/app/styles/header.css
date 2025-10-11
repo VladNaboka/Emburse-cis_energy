@@ -114,6 +114,9 @@ body {
   z-index: 4;
   transition: box-shadow 0.28s var(--ease-out);
   animation: fadeSlideDown 0.32s var(--ease-out) both 0.05s;
+  box-shadow: 0px 2px 4px -2px #0000001a;
+
+  box-shadow: 0px 4px 6px -1px #0000001a;
 }
 .nav {
   height: 56px;
@@ -659,11 +662,11 @@ body {
 }
 
 .nav__logo--text {
-  font-weight: 800;
+  font-weight: 600;
   font-size: 24px;
   line-height: 26px;
   letter-spacing: 0.2px;
-  color: #0097dc;
+  color: #000;
 }
 .nav__logo-word {
   display: inline-block;
@@ -839,11 +842,11 @@ body {
 
 .mega {
   position: absolute;
-  top: 100%;
+  top: 160%;
   left: 50%;
   transform: translateX(-50%); /* всегда по центру */
-  width: 806px;
-  height: 209px;
+  width: 650px;
+  height: 180px;
   pointer-events: none;
   opacity: 0;
   visibility: hidden;
@@ -858,12 +861,12 @@ body {
   background: #f1ecea;
   border-bottom-left-radius: 14px;
   border-bottom-right-radius: 14px;
+  /* border-radius: 14px; */
 }
 
 .mega__panel {
   position: relative;
-  width: 789px;
-  height: 192px;
+  width: 630px;
   margin: 9px auto 0;
   background: #fff;
   border-radius: 9px;

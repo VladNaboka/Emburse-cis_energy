@@ -38,16 +38,13 @@
   gap: 32px;
 }
 
-/* ===== Карточка =====
-   2 колонки (кавычка + контент), 2 строки (текст + подвал).
-   !!! column-gap = 0 — чтобы низ можно было выровнять точно на 15px. */
 .why-card {
   display: grid;
   grid-template-columns: 28px 1fr;
-  grid-template-rows: auto auto; /* r1 — текст; r2 — подвал */
+  grid-template-rows: auto auto;
   column-gap: 0;
-  row-gap: 30px; /* нижняя часть на 30px ниже текста */
-  padding: 25px;
+  row-gap: 30px;
+  padding: 24px 24px 15px 24px;
   border-radius: 12px;
   background: #f4f5f6;
   overflow: hidden;

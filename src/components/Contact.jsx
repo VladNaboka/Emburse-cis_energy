@@ -8,6 +8,7 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     company: '',
+    post: '',
     email: '',
     phone: '',
     topic: '',
@@ -44,8 +45,8 @@ export default function Contact() {
     e.preventDefault();
 
     // Базовая валидация
-    if (!formData.name || !formData.email) {
-      alert('Пожалуйста, заполните обязательные поля (Имя и Email)');
+    if (!formData.name || !formData.email || formData.post) {
+      alert('Пожалуйста, заполните обязательные поля (Имя и Email, Должность)');
       return;
     }
 
@@ -65,6 +66,7 @@ export default function Contact() {
     setFormData({
       name: '',
       company: '',
+      post: '',
       email: '',
       phone: '',
       topic: '',
@@ -178,6 +180,18 @@ export default function Contact() {
                   value={formData.company}
                   onChange={handleInputChange}
                   placeholder="CIS ENERGY"
+                />
+              </label>
+
+              <label className="field">
+                <span className="field__label">{t('form.post')}</span>
+                <input
+                  className="field__input"
+                  type="text"
+                  name="post"
+                  value={formData.post}
+                  onChange={handleInputChange}
+                  placeholder="Директор"
                 />
               </label>
 

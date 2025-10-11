@@ -78,7 +78,7 @@ export default function Header() {
       <div className="topbar">
         <div className="topbar__inner">
           <span className="topbar__text">
-            <strong>Интегрированные решения для вашей отрасли</strong>
+            <strong>Complete Intergrated Solutions Energy</strong>
           </span>
         </div>
       </div>
@@ -398,9 +398,9 @@ export default function Header() {
               </div>
             </div>
 
-            <Link className="nav__login" href="/">
+            {/* <Link className="nav__login" href="/">
               Войти
-            </Link>
+            </Link> */}
 
             <Link className="btn-cta" href="/#contact">
               Связаться с нами
@@ -655,9 +655,9 @@ export default function Header() {
               </div>
             </div>
 
-            <Link className="drawer__login" href="/" onClick={() => setDrawerOpen(false)}>
+            {/* <Link className="drawer__login" href="/" onClick={() => setDrawerOpen(false)}>
               Войти
-            </Link>
+            </Link> */}
             <Link
               className="btn-cta btn-cta--full"
               href="/#contact"

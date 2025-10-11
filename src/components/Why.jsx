@@ -32,7 +32,7 @@ export default function Why() {
             />
             <div className="why-card__person">
               <div className="why-card__name">{t('cards.0.name')}</div>
-              <div className="why-card__role">{t('cards.0.role')}</div>
+              {/* <div className="why-card__role">{t('cards.0.role')}</div> */}
             </div>
           </article>
 
@@ -55,7 +55,7 @@ export default function Why() {
             />
             <div className="why-card__person">
               <div className="why-card__name">{t('cards.1.name')}</div>
-              <div className="why-card__role">{t('cards.1.role')}</div>
+              {/* <div className="why-card__role">{t('cards.1.role')}</div> */}
             </div>
           </article>
 
@@ -78,7 +78,7 @@ export default function Why() {
             />
             <div className="why-card__person">
               <div className="why-card__name">{t('cards.2.name')}</div>
-              <div className="why-card__role">{t('cards.2.role')}</div>
+              {/* <div className="why-card__role">{t('cards.2.role')}</div> */}
             </div>
           </article>
         </div>
