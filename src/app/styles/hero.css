@@ -4,15 +4,32 @@
   background: #fff;
   font-family: 'Trebuchet MS', sans-serif;
 }
-.hero__media img {
-  display: block;
-  width: 100%;
-  object-fit: cover;
-  object-position: center;
-  /* transform: scaleX(1.1); */
-  /* margin-top: -100px; */
+
+/* ✨ Контейнер для волны: управляем высотой и прячем лишнее */
+.hero__media {
+  position: relative;
+  overflow: hidden;
+  height: clamp(220px, 32vw, 460px);
 }
 
+/* ✨ Картинка волны — заполняет контейнер по высоте и шире вьюпорта по ширине */
+.hero__media img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  height: 100%;
+  width: 120vw; /* оверскан, чтобы «волна» доходила до краёв */
+  max-width: none;
+  left: 50%;
+  transform: translateX(-50%);
+  object-fit: cover;
+  object-position: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Остальной контент хиро */
 .hero__content {
   text-align: center;
   margin-top: -50px;
@@ -107,9 +124,7 @@
 
 /* 1440 */
 @media (max-width: 1480px) {
-  .hero__media img {
-    height: 360px;
-  }
+  /* высоту теперь управляем контейнером, а не img */
   .hero__content {
     margin-top: 35px;
   }
@@ -117,9 +132,6 @@
 
 /* 1024 */
 @media (max-width: 1060px) {
-  .hero__media img {
-    height: 350px;
-  }
   .hero__title {
     font-size: 40px;
     line-height: 44px;
@@ -128,10 +140,11 @@
 
 /* 768 */
 @media (max-width: 800px) {
-  .hero__media img {
-    height: 250px;
-    margin-top: -20px;
+  /* делаем секцию чуть ниже на мобилках, чтобы волна не резалась */
+  .hero__media {
+    height: clamp(180px, 40vw, 320px);
   }
+
   .hero__title {
     font-size: 40px;
     line-height: 44px;
@@ -145,13 +158,9 @@
 }
 
 @media (max-width: 420px) {
-  /* .hero__media img {
-    height: 97.5px;
-  } */
   .hero__content {
     margin-top: 30px;
     text-align: left;
-
     max-width: unset;
   }
   .hero__eyebrow {
@@ -178,5 +187,39 @@
 @media (max-width: 340px) {
   .hero__btn {
     width: 100%;
+  }
+}
+
+/* Доп. подстройка на очень широких экранах: слегка уменьшаем оверскан */
+@media (min-width: 1440px) {
+  .hero__media img {
+    width: 110vw;
+  }
+}
+@media (min-width: 1920px) {
+  .hero__media img {
+    width: 105vw;
+  }
+}
+.hero__media {
+  height: clamp(300px, 42vw, 620px); /* было clamp(220px, 32vw, 460px) */
+}
+
+/* Сместим фокус чуть ниже центра, чтобы был виден низ рисунка */
+.hero__media img {
+  object-position: 50% 60%; /* центр по X, 60% по Y = больше низа в кадре */
+}
+
+/* На широких экранах ещё немного прибавим высоту */
+@media (min-width: 1440px) {
+  .hero__media {
+    height: clamp(340px, 36vw, 660px);
+  }
+}
+
+/* На мобильных делаем секцию выше, чтобы волна тоже не резалась */
+@media (max-width: 800px) {
+  .hero__media {
+    height: clamp(220px, 48vw, 380px);
   }
 }
