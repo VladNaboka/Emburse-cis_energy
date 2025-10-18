@@ -61,15 +61,15 @@
   --img-w: 215px;
   --img-h: 143px;
   --img-br: 0px;
-  --img-r: -25px;
-  --img-b: -13px;
+  --img-r: -3px;
+  --img-b: -2px;
 }
 .services__grid .svc-card:nth-child(2) {
   --img-w: 215px;
   --img-h: 143px;
   --img-br: 0px;
-  --img-r: -25px;
-  --img-b: -13px;
+  --img-r: 0px;
+  --img-b: -6px;
 }
 .services__grid .svc-card:nth-child(3) {
   --img-w: 181px;
@@ -83,7 +83,7 @@
   --img-h: 133px;
   --img-br: 35px;
   --img-r: 0px;
-  --img-b: -15px;
+  --img-b: 0px;
 }
 
 .svc-card__body {

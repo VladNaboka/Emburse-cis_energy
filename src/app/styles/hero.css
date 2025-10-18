@@ -9,11 +9,13 @@
   width: 100%;
   object-fit: cover;
   object-position: center;
+  transform: scaleX(1.1);
+  margin-top: -100px;
 }
 
 .hero__content {
   text-align: center;
-  margin-top: -10px;
+  margin-top: -50px;
   max-width: min(920px, 92vw);
   display: flex;
   flex-direction: column;
@@ -128,6 +130,7 @@
 @media (max-width: 800px) {
   .hero__media img {
     height: 250px;
+    margin-top: -20px;
   }
   .hero__title {
     font-size: 40px;

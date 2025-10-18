@@ -661,7 +661,7 @@ body {
 }
 .mlang--capsule .mlang__menu {
   position: absolute;
-  top: calc(100% + 8px);
+  top: -150px;
   left: 16px;
   right: 16px;
   background: #fff;

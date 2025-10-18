@@ -1,5 +1,5 @@
 :root {
-  --logos-max: 1524px;
+  --logos-max: 1440px;
   --logos-gap: 60px;
 }
 
@@ -24,7 +24,7 @@
   margin-top: 47px;
 
   position: relative;
-  padding: 0 15px;
+  /* padding: 0 15px; */
   max-width: var(--logos-max);
   margin-inline: auto;
 }
@@ -203,10 +203,11 @@
   }
 }
 
-@media (max-width: 1580px) {
-  .logos__viewport {
-    overflow: hidden;
-  }
+.logos__viewport {
+  overflow: hidden;
+}
+
+@media (max-width: 2500px) {
 }
 
 @media (max-width: 1280px) and (min-width: 1140px) {

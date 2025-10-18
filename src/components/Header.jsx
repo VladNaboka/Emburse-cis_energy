@@ -338,13 +338,13 @@ export default function Header() {
                   onClick={() => setLangOpen(false)} // просто закрываем
                 >
                   <img
-                    src="/images/icons/english.svg"
+                    src="/images/icons/russian.svg"
                     width="16"
                     height="16"
                     style={{ marginRight: 8, verticalAlign: 'middle' }}
                     alt=""
                   />{' '}
-                  English
+                  RU
                 </button>
                 <button
                   className="lang__item"
@@ -352,26 +352,35 @@ export default function Header() {
                   onClick={() => setLangOpen(false)} // просто закрываем
                 >
                   <img
-                    src="/images/icons/russian.svg"
+                    src="/images/icons/KZ.svg"
                     width="16"
                     height="16"
                     style={{ marginRight: 8, verticalAlign: 'middle' }}
                     alt=""
                   />{' '}
-                  Русский
+                  KZ
+                </button>
+                <button
+                  className="lang__item"
+                  role="menuitem"
+                  onClick={() => setLangOpen(false)} // просто закрываем
+                >
+                  <img
+                    src="/images/icons/UK.svg"
+                    width="24"
+                    height="24"
+                    style={{
+                      marginRight: 6,
+                      verticalAlign: 'middle',
+                      marginLeft: -4,
+                    }}
+                    alt=""
+                  />{' '}
+                  UK
                 </button>
               </div>
             </div>
 
-            {/* <Link className="nav__login" href="/">
-              Войти
-            </Link> */}
-
-            <Link className="btn-cta" href="/#contact">
-              Связаться с нами
-            </Link>
-
-            {/* Burger (моб) */}
             <button
               className="burger"
               aria-label="Открыть меню"
@@ -392,7 +401,6 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Off-canvas мобильное меню */}
       <div
         className={`drawer${drawerOpen ? ' drawer--open' : ''}`}
         id="mobileNav"
@@ -562,6 +570,10 @@ export default function Header() {
             <Link className="mnav__link" href="/pso" onClick={() => setDrawerOpen(false)}>
               PSO
             </Link>
+
+            <Link className="mnav__link" href="#contact">
+              Cвязаться с нами
+            </Link>
           </nav>
 
           <div className="drawer__controls">
@@ -599,23 +611,33 @@ export default function Header() {
               <div className="mlang__menu">
                 <button className="mlang__item" onClick={() => setMobileLangOpen(false)}>
                   <img
-                    src="/images/icons/english.svg"
-                    width="16"
-                    height="16"
-                    style={{ marginRight: 8 }}
-                    alt=""
-                  />{' '}
-                  English
-                </button>
-                <button className="mlang__item" onClick={() => setMobileLangOpen(false)}>
-                  <img
                     src="/images/icons/russian.svg"
                     width="16"
                     height="16"
                     style={{ marginRight: 8 }}
                     alt=""
                   />{' '}
-                  Русский
+                  RU
+                </button>
+                <button className="mlang__item" onClick={() => setMobileLangOpen(false)}>
+                  <img
+                    src="/images/icons/KZ.svg"
+                    width="16"
+                    height="16"
+                    style={{ marginRight: 8 }}
+                    alt=""
+                  />{' '}
+                  KZ
+                </button>
+                <button className="mlang__item" onClick={() => setMobileLangOpen(false)}>
+                  <img
+                    src="/images/icons/UK.svg"
+                    width="16"
+                    height="16"
+                    style={{ marginRight: 8 }}
+                    alt=""
+                  />{' '}
+                  UK
                 </button>
               </div>
             </div>
