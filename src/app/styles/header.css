@@ -629,7 +629,7 @@ body {
 }
 
 .drawer__controls {
-  margin-top: auto;
+  /* margin-top: auto; */
   padding: 16px;
   display: grid;
   gap: 14px;

@@ -641,17 +641,6 @@ export default function Header() {
                 </button>
               </div>
             </div>
-
-            {/* <Link className="drawer__login" href="/" onClick={() => setDrawerOpen(false)}>
-              Войти
-            </Link> */}
-            <Link
-              className="btn-cta btn-cta--full"
-              href="/#contact"
-              onClick={() => setDrawerOpen(false)}
-            >
-              Связаться с нами
-            </Link>
           </div>
         </aside>
       </div>

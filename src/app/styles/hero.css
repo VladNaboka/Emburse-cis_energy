@@ -9,8 +9,8 @@
   width: 100%;
   object-fit: cover;
   object-position: center;
-  transform: scaleX(1.1);
-  margin-top: -100px;
+  /* transform: scaleX(1.1); */
+  /* margin-top: -100px; */
 }
 
 .hero__content {

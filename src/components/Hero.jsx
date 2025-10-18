@@ -12,6 +12,7 @@ export default function Hero() {
           <source media="(max-width: 800px)" srcSet="/images/hero/main768.png" />
           <source media="(max-width: 1060px)" srcSet="/images/hero/main1024.png" />
           <source media="(max-width: 1480px)" srcSet="/images/hero/main1920.png" />
+          <source media="(max-width: 1920px)" srcSet="/images/hero/main1920.png" />
           <img src="/images/hero/main1920.png" alt="" loading="eager" decoding="async" />
         </picture>
       </div>
