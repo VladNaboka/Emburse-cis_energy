@@ -19,7 +19,7 @@
   display: block;
   height: 100%;
   width: 120vw; /* оверскан, чтобы «волна» доходила до краёв */
-  max-width: none;
+  max-width: 1920px;
   left: 50%;
   transform: translateX(-50%);
   object-fit: cover;
@@ -202,7 +202,7 @@
   }
 }
 .hero__media {
-  height: clamp(300px, 42vw, 620px); /* было clamp(220px, 32vw, 460px) */
+  height: clamp(300px, 42vw, 800px); /* было clamp(220px, 32vw, 460px) */
 }
 
 /* Сместим фокус чуть ниже центра, чтобы был виден низ рисунка */
@@ -213,7 +213,7 @@
 /* На широких экранах ещё немного прибавим высоту */
 @media (min-width: 1440px) {
   .hero__media {
-    height: clamp(340px, 36vw, 660px);
+    height: clamp(340px, 36vw, 800px);
   }
 }
 
