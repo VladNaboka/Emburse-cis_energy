@@ -14,7 +14,10 @@ export default function LogosClients() {
           <img className="c-2" src="/images/client_2.png" alt="Client 2" />
           <img className="c-3" src="/images/client_3.png" alt="Client 3" />
           <img className="c-4" src="/images/client_4.png" alt="Client 4" />
-          {/* <img className="c-5" src="/images/client_5.png" alt="Client 5" /> */}
+          <img className="c-5" src="/images/client_5.png" alt="Client 5" />
+          <img className="c-6" src="/images/client_6.png" alt="Client 6" />
+          <img className="c-7" src="/images/client_7.png" alt="Client 7" />
+          <img className="c-8" src="/images/client_8.png" alt="Client 8" />
         </div>
       </div>
       <div className="logos__controls">

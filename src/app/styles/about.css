@@ -231,7 +231,6 @@
 
   .about__btn {
     margin-top: 20px;
-    width: 114px; /* фикс ширины кнопки из фигмы */
   }
 
   .about__col--media {

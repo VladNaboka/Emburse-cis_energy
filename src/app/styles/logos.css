@@ -71,12 +71,28 @@
 }
 .logos--clients .c-4 {
   width: 205px;
-  height: 91px;
+  height: 80px;
 }
 .logos--clients .c-5 {
   width: 167px;
   height: 98px;
-} /* Кнопки */
+}
+.logos--clients .c-6 {
+  width: 100px;
+  height: 98px;
+}
+.logos--clients .c-7 {
+  width: 167px;
+  height: 98px;
+}
+.logos--clients .c-8 {
+  width: 200px;
+  height: 100px;
+  margin-left: -20px;
+  padding-right: 40px;
+  transform: scale(1.1);
+}
+
 .logos__controls {
   margin-top: 60px;
   display: flex;
@@ -123,15 +139,20 @@
     height: auto;
     max-height: 68px;
   }
-  .logos--partners .logos__track img:nth-child(-n + 3),
-  .logos--clients .logos__track img:nth-child(-n + 3) {
-    width: auto !important;
-    max-width: calc((100% - 2 * 32px) / 3);
+  .logos--partners .logos__track img:nth-child(-n + 8),
+  .logos--clients .logos__track img:nth-child(-n + 8) {
+    /* width: auto !important; */
+    /* max-width: calc((100% - 2 * 40px) / 3); */
     flex: 0 1 auto;
   }
-  .logos--partners .logos__track img:nth-child(n + 4),
-  .logos--clients .logos__track img:nth-child(n + 4) {
+  .logos--partners .logos__track img:nth-child(n + 8),
+  .logos--clients .logos__track img:nth-child(n + 8) {
     flex: 0 0 auto;
+  }
+
+  .logos--clients .c-7 {
+    width: 167px !important;
+    height: 98px;
   }
 }
 
@@ -173,7 +194,8 @@
     line-height: 44px;
   }
   .logos__track img {
-    max-height: 52px;
+    max-height: 100px;
+    padding-left: 20px;
   }
   .logos__btn svg {
     width: 34px;
@@ -235,8 +257,21 @@
     height: auto;
   }
   .logos--clients .c-5 {
-    width: 142px;
+    width: 100px;
     height: auto;
+  }
+  .logos--clients .c-6 {
+    width: 90px;
+    height: auto;
+  }
+  .logos--clients .c-7 {
+    width: 90px;
+    height: auto;
+  }
+  .logos--clients .c-8 {
+    width: 195px;
+    height: auto;
+    margin-left: 0;
   }
 
   .logos__track img {

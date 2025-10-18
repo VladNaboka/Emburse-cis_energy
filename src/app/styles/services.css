@@ -50,7 +50,7 @@
   border-radius: 4px;
   border-bottom-right-radius: 60px;
   background: #ffffff01;
-  box-shadow: 0 4px 6px -4px #0000001a, 0 10px 15px -3px #0000001a;
+  box-shadow: -4px 0 7px -4px #0000001a, 4px 0 7px -4px #0000001a;
   overflow: hidden;
 
   --img-w: 215px;

@@ -27,15 +27,18 @@ body {
   margin: 0;
   padding: 0;
 }
+
 body {
   font-family: 'Trebuchet MS', sans-serif;
   color: var(--ink);
   background: #fff;
 }
+
 .container {
   width: min(var(--container), 92vw);
   margin-inline: auto;
 }
+
 .site-header.is-sticky .navwrap {
   box-shadow: var(--nav-shadow-1), var(--nav-shadow-2);
 }
@@ -71,6 +74,7 @@ body {
   }
 }
 
+/* ===== Topbar ===== */
 .topbar {
   height: 40px;
   display: flex;
@@ -114,21 +118,50 @@ body {
   z-index: 4;
   transition: box-shadow 0.28s var(--ease-out);
   animation: fadeSlideDown 0.32s var(--ease-out) both 0.05s;
-  box-shadow: 0px 2px 4px -2px #0000001a;
-
   box-shadow: 0px 4px 6px -1px #0000001a;
 }
+
 .nav {
   height: 56px;
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  /* Центрируем меню строго по центру контейнера */
+  grid-template-columns: 1fr 2fr 1fr;
   align-items: center;
 }
+
+/* Стороны могут сжиматься, чтобы освободить центр */
+.nav__logo,
+.nav__right {
+  min-width: 0;
+}
+
 .nav__logo {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  justify-content: start;
+  gap: 6px;
   text-decoration: none;
+  grid-column: 1;
+  justify-self: start;
+}
+
+/* Лого-картинка (если используется) */
+.nav__logo img {
+  max-width: clamp(120px, 18vw, 180px);
+  height: auto;
+}
+
+/* Текстовый логотип — не расползается */
+.nav__logo--text {
+  font-weight: 600;
+  font-size: clamp(16px, 2vw, 22px);
+  line-height: 1.1;
+  letter-spacing: 0.2px;
+  color: #000;
+  max-width: clamp(150px, 22vw, 220px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .nav__menu {
@@ -140,10 +173,14 @@ body {
   margin: 0;
   padding: 0;
   min-width: 0;
+  grid-column: 2;
+  justify-self: center; /* геометрический центр */
 }
+
 .nav__item {
   position: relative;
 }
+
 .nav__link,
 .nav__item > a.nav__link {
   display: inline-flex;
@@ -157,6 +194,7 @@ body {
   white-space: nowrap;
   transition: color 0.15s var(--ease-out);
 }
+
 .nav__item--has-drop .nav__link {
   cursor: pointer;
   background: transparent;
@@ -165,6 +203,7 @@ body {
   font: inherit;
   color: inherit;
 }
+
 .icon {
   display: inline-block;
   vertical-align: middle;
@@ -180,8 +219,6 @@ body {
 }
 .nav__link:hover .hover-underline {
   background-size: 100% 2px;
-}
-.nav__link:hover .hover-underline {
   color: #0097dc;
 }
 .nav__link:hover .icon--chev {
@@ -226,6 +263,8 @@ body {
   pointer-events: auto;
   animation: menuIn 0.18s var(--ease-spring);
 }
+
+/* Mega */
 .nav__item--has-drop:hover > .mega,
 .nav__item--open > .mega,
 .mega:hover {
@@ -240,16 +279,18 @@ body {
   display: flex;
   align-items: center;
   gap: 18px;
+  grid-column: 3;
+  justify-self: end;
 }
 
 .nav__right .search {
   margin-right: -50px;
   transition: margin-right 0.22s ease;
 }
-
 .nav__right .search.search--open {
-  margin-right: 0px;
+  margin-right: 0;
 }
+
 .search {
   position: relative;
   display: flex;
@@ -260,8 +301,6 @@ body {
 .search__btn {
   width: 36px;
   height: 36px;
-  inline-size: 36px;
-  block-size: 36px;
   display: inline-grid;
   place-items: center;
   border: none;
@@ -273,11 +312,11 @@ body {
 .search__btn:active {
   transform: scale(0.97);
 }
-
 .search__btn:hover {
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
   border-color: #d8dee9;
 }
+
 .search__input {
   width: 0;
   opacity: 0;
@@ -309,13 +348,11 @@ body {
   width: 240px;
   opacity: 1;
 }
-
 .search--open .search__submit {
   display: inline-flex;
 }
 .search--open .icon--search {
   transform: rotate(90deg);
-
   transition: transform 0.22s var(--ease-out);
 }
 
@@ -349,6 +386,7 @@ body {
   border-radius: 3px;
   display: inline-block;
 }
+
 .lang__menu {
   position: absolute;
   top: calc(100% + 8px);
@@ -371,6 +409,7 @@ body {
   pointer-events: auto;
   transition-delay: 0s;
 }
+
 .lang__item {
   display: flex;
   align-items: center;
@@ -398,6 +437,7 @@ body {
   font-weight: 600;
   text-decoration: none;
 }
+
 .btn-cta {
   height: 36px;
   padding: 0 16px;
@@ -435,6 +475,7 @@ body {
   transform: scale(0.96);
 }
 
+/* ===== Drawer ===== */
 .drawer[hidden] {
   display: none;
 }
@@ -488,6 +529,7 @@ body {
 .drawer__close:active {
   transform: scale(0.96);
 }
+
 .mnav {
   padding: 8px 16px;
   display: block;
@@ -539,6 +581,7 @@ body {
 .mnav__link:hover {
   background: #f5f7fb;
 }
+
 .mlang {
   position: relative;
 }
@@ -584,6 +627,7 @@ body {
 .mlang__item:hover {
   background: #f5f7fb;
 }
+
 .drawer__controls {
   margin-top: auto;
   padding: 16px;
@@ -591,6 +635,7 @@ body {
   gap: 14px;
   border-top: 1px solid #e8ecf2;
 }
+
 .mlang--capsule .mlang__btn {
   display: inline-flex;
   align-items: center;
@@ -614,7 +659,6 @@ body {
   border-radius: 3px;
   display: inline-block;
 }
-
 .mlang--capsule .mlang__menu {
   position: absolute;
   top: calc(100% + 8px);
@@ -651,6 +695,7 @@ body {
 .mlang__item:active {
   transform: scale(0.98);
 }
+
 .drawer__login {
   color: var(--brand);
   font-weight: 600;
@@ -661,17 +706,102 @@ body {
   justify-content: center;
 }
 
-.nav__logo--text {
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 26px;
-  letter-spacing: 0.2px;
-  color: #000;
-}
 .nav__logo-word {
   display: inline-block;
 }
+.nav__logo--text .nav__logo-word {
+  display: inline-block;
+  white-space: nowrap;
+  transition: word-spacing 0.18s var(--ease-out), letter-spacing 0.18s var(--ease-out),
+    transform 0.18s var(--ease-out);
+  will-change: word-spacing, letter-spacing;
+}
+.nav__logo--text:hover .nav__logo-word {
+  word-spacing: var(--logo-split);
+}
 
+/* ===== Mega ===== */
+.nav__item--has-drop {
+  position: relative;
+}
+.mega {
+  position: absolute;
+  top: 160%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 650px;
+  height: 180px;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s ease-out, visibility 0s linear 0.15s;
+  z-index: 60;
+  margin-top: 10px;
+}
+.mega__bg {
+  position: absolute;
+  inset: 0;
+  background: #f1ecea;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+}
+.mega__panel {
+  position: relative;
+  width: 630px;
+  margin: 9px auto 0;
+  background: #fff;
+  border-radius: 9px;
+  padding: 28px 36px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+.mega__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 56px;
+  row-gap: 24px;
+  align-items: center;
+  justify-items: start;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.mega__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  color: #0c2340;
+  line-height: 32px;
+  transition: color 0.15s ease;
+}
+.mega__icon svg {
+  display: block;
+}
+.mega__label {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+.mega::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -12px;
+  height: 12px;
+}
+
+.mega__link:hover .mega__label {
+  text-decoration: underline;
+}
+.mega__link:hover .mega__icon svg path,
+.mega__link:hover .mega__icon svg rect {
+  stroke: #005eb8;
+}
+
+/* ===== Breakpoints ===== */
 @media (max-width: 1200px) {
   .nav {
     column-gap: 12px;
@@ -690,6 +820,7 @@ body {
     width: 220px;
   }
 }
+
 @media (max-width: 1140px) {
   .nav__menu > li:nth-last-child(1) {
     display: none;
@@ -698,6 +829,7 @@ body {
     gap: 28px;
   }
 }
+
 @media (max-width: 1080px) {
   .nav__menu > li:nth-last-child(1),
   .nav__menu > li:nth-last-child(2) {
@@ -707,6 +839,7 @@ body {
     width: 190px;
   }
 }
+
 @media (max-width: 1060px) {
   :root {
     --container: 960px;
@@ -718,6 +851,7 @@ body {
     font-size: 14px;
   }
 }
+
 @media (max-width: 900px) {
   .mega {
     width: 640px;
@@ -726,14 +860,18 @@ body {
     width: 620px;
   }
 }
-@media (max-width: 800px) {
+
+@media (max-width: 1150px) {
   :root {
-    --container: 704px;
+    --container: 90vw;
     --gap-menu: 36px;
   }
+
+  /* На мобилке меню скрыто — простая сетка для лого/кнопки/бургер */
   .nav {
-    grid-template-columns: 138px 1fr auto;
+    grid-template-columns: auto 1fr auto;
   }
+
   .nav__menu,
   .search,
   .lang,
@@ -753,7 +891,6 @@ body {
     min-width: 117px;
     margin-right: auto;
   }
-
   .burger {
     display: inline-block;
     order: 3;
@@ -771,21 +908,27 @@ body {
     grid-template-columns: 1fr;
     row-gap: 16px;
   }
+
   .search__input {
     width: 0 !important;
-  } /* чтобы не ломало строку */
+  }
   .search--open .search__input {
     width: 160px !important;
   }
 
+  /* Раньше было width: 50vw — раздувало логотип.
+     Оставляем авто-ширину и ограничиваем по максимуму. */
   .nav__logo--text {
-    width: 50vw;
+    width: auto;
+    max-width: 50vw;
   }
 }
+
 @media (max-width: 420px) {
   :root {
     --container: 326px;
   }
+
   .topbar {
     height: 64px;
     text-align: center;
@@ -795,11 +938,13 @@ body {
     gap: 6px;
     padding: 6px 12px;
   }
+
   .nav {
     height: 56px;
     grid-template-columns: 1fr auto auto;
     column-gap: 10px;
   }
+
   .nav__logo img {
     width: 120px;
     height: auto;
@@ -813,10 +958,11 @@ body {
     stroke: #0c2340;
   }
 
+  /* Без фиксированной ширины — только ограничение по максимуму */
   .nav__logo--text {
     font-size: 13px;
     line-height: 24px;
-    width: 27vw;
+    max-width: 45vw;
   }
 }
 
@@ -828,6 +974,7 @@ body {
   width: 20px;
   height: 20px;
 }
+
 @media (max-width: 340px) {
   .btn-cta {
     padding: 0 12px;
@@ -836,147 +983,8 @@ body {
     width: 108px;
   }
 }
-.nav__item--has-drop {
-  position: relative;
-}
 
-.mega {
-  position: absolute;
-  top: 160%;
-  left: 50%;
-  transform: translateX(-50%); /* всегда по центру */
-  width: 650px;
-  height: 180px;
-  pointer-events: none;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.15s ease-out, visibility 0s linear 0.15s;
-  z-index: 60;
-  margin-top: 10px;
-}
-
-.mega__bg {
-  position: absolute;
-  inset: 0;
-  background: #f1ecea;
-  border-bottom-left-radius: 14px;
-  border-bottom-right-radius: 14px;
-  /* border-radius: 14px; */
-}
-
-.mega__panel {
-  position: relative;
-  width: 630px;
-  margin: 9px auto 0;
-  background: #fff;
-  border-radius: 9px;
-  padding: 28px 36px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-}
-
-.mega__list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: 56px;
-  row-gap: 24px;
-  align-items: center;
-  justify-items: start;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.mega__link {
-  display: inline-flex;
-  align-items: center;
-  gap: 16px;
-  text-decoration: none;
-  color: #0c2340;
-  line-height: 32px;
-  transition: color 0.15s ease;
-}
-
-.mega__icon svg {
-  display: block;
-}
-
-.mega__label {
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 32px;
-  letter-spacing: 0;
-  white-space: nowrap;
-}
-
-.mega::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -12px;
-  height: 12px;
-}
-
-.nav__item--has-drop:hover > .mega,
-.nav__item--open > .mega,
-.mega:hover {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  transition-delay: 0s;
-}
-
-.mega__link:hover .mega__label {
-  text-decoration: underline;
-}
-.mega__link:hover .mega__label {
-  text-decoration: underline;
-}
-.mega__link:hover .mega__icon svg path,
-.mega__link:hover .mega__icon svg rect {
-  stroke: #005eb8;
-}
-
-.mmega {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-top: 10px;
-}
-@media (max-width: 380px) {
-  .mmega {
-    grid-template-columns: 1fr;
-  }
-}
-.mmega__item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 12px;
-  border: 1px solid #e6eaf1;
-  border-radius: 10px;
-  text-decoration: none;
-  color: #0c2340;
-  background: #fff;
-}
-.mmega__item:active {
-  transform: scale(0.98);
-}
-.mmega__icon svg {
-  display: block;
-}
-.nav__logo--text .nav__logo-word {
-  display: inline-block;
-  white-space: nowrap;
-  transition: word-spacing 0.18s var(--ease-out), letter-spacing 0.18s var(--ease-out),
-    transform 0.18s var(--ease-out);
-  will-change: word-spacing, letter-spacing;
-}
-
-.nav__logo--text:hover .nav__logo-word {
-  word-spacing: var(--logo-split);
-}
-
+/* ===== Reduced motion ===== */
 @media (prefers-reduced-motion: reduce) {
   .nav__logo--text .nav__logo-word {
     transition: none;

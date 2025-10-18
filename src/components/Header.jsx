@@ -178,15 +178,6 @@ export default function Header() {
                         onClick={() => setServicesOpen(false)}
                       >
                         <span className="mega__icon" aria-hidden="true">
-                          {/*                           <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                            <path
-                              d="M4 16h16M5 16l2-6h7l2 6M7 10l3-3"
-                              stroke="#0C67C2"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg> */}
                           <svg
                             width="33"
                             height="32"
@@ -211,29 +202,6 @@ export default function Header() {
                         onClick={() => setServicesOpen(false)}
                       >
                         <span className="mega__icon" aria-hidden="true">
-                          {/*                           <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                            <rect
-                              x="3"
-                              y="5"
-                              width="18"
-                              height="12"
-                              rx="2"
-                              stroke="#0C67C2"
-                              strokeWidth="2"
-                            />
-                            <path
-                              d="M2 19h20"
-                              stroke="#0C67C2"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                            />
-                            <path
-                              d="M7 9h4M7 12h7"
-                              stroke="#0C67C2"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                            />
-                          </svg> */}
                           <svg
                             width="38"
                             height="38"
@@ -258,14 +226,6 @@ export default function Header() {
                         onClick={() => setServicesOpen(false)}
                       >
                         <span className="mega__icon" aria-hidden="true">
-                          {/*                           <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                            <path
-                              d="M7 19h10l-2-6 2-6H7l2 6-2 6Z"
-                              stroke="#0C67C2"
-                              strokeWidth="2"
-                              strokeLinejoin="round"
-                            />
-                          </svg> */}
                           <svg
                             width="29"
                             height="36"
@@ -290,6 +250,11 @@ export default function Header() {
             <li className="nav__item">
               <Link className="nav__link" href="/pso">
                 <span className="hover-underline">PSO</span>
+              </Link>
+            </li>
+            <li className="nav__item">
+              <Link className="nav__link" href="#contact">
+                <span className="hover-underline">Cвязаться с нами</span>
               </Link>
             </li>
           </ul>
