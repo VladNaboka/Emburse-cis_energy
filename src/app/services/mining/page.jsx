@@ -8,7 +8,6 @@ export default function MiningPage() {
 
   return (
     <div className="svc-scope">
-      {/* HERO */}
       <section className="hero">
         <img src="/images/services_2/main.png" alt={t('heroTitle')} className="hero__bg" />
         <div className="hero__overlay">

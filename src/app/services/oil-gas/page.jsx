@@ -1,4 +1,3 @@
-// app/[locale]/services/oil-gas/page.jsx
 import { useT } from '../../../lib/ruMessages';
 import './page.css';
 
@@ -11,7 +10,6 @@ export default function OilGasPage() {
 
   return (
     <div className="svc-scope">
-      {/* HERO */}
       <section className="hero">
         <img src="/images/services_1/main.png" alt={t('heroTitle')} className="hero__bg" />
         <div className="hero__overlay">
@@ -22,9 +20,7 @@ export default function OilGasPage() {
         </div>
       </section>
 
-      {/* ===== Services wrapper (все блоки ниже hero) ===== */}
       <section className="svc">
-        {/* 1 — текст слева, картинка справа (по умолчанию) */}
         <article className="svc-card_service svc-card_service--blue">
           <div className="svc-card_service__body_service">
             <h2 className="svc-card_service__title">{t('s1.title')}</h2>
@@ -40,7 +36,6 @@ export default function OilGasPage() {
           </figure>
         </article>
 
-        {/* 2 — текст справа, картинка слева */}
         <article className="svc-card_service svc-card_service--amber svc-card_service--alt">
           <figure className="svc-card_service__media">
             <img src="/images/services_1/block3.png" alt="Conceptual design" />

@@ -19,6 +19,16 @@
   position: relative;
 }
 
+.foot-copyright {
+  grid-column: 1;
+  justify-self: start;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.004em;
+  color: #fff;
+}
+
 .foot-nav {
   grid-column: 2;
   display: flex;
@@ -80,8 +90,26 @@
   .site-footer {
     min-height: 112px;
   }
+  .site-footer__inner {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 20px;
+  }
+  .foot-copyright {
+    grid-column: 1;
+    justify-self: center;
+    font-size: 14px;
+    order: 2;
+  }
   .foot-nav {
+    grid-column: 1;
     gap: 40px;
+    order: 1;
+  }
+  .foot-social {
+    grid-column: 1;
+    justify-self: center;
+    order: 3;
   }
   .foot-social__link {
     width: 22px;
@@ -93,6 +121,9 @@
 @media (max-width: 420px) {
   .site-footer {
     min-height: 100px;
+  }
+  .foot-copyright {
+    font-size: 13px;
   }
   .foot-nav {
     gap: 24px;

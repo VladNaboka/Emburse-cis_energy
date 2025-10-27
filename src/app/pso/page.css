@@ -62,6 +62,7 @@
   display: grid;
   gap: var(--svc-gap);
 }
+
 /* cards */
 .svc-card_service {
   display: grid;
@@ -71,7 +72,7 @@
   border-bottom-right-radius: var(--svc-radius);
   padding: var(--svc-pad);
   box-shadow: 0 4px 6px 0 #0097dc1a, 10px 10px 15px 0 #0097dc1a;
-  align-items: flex-start;
+  align-items: center;
 }
 .svc-card_service--blue {
   box-shadow: 0 4px 6px 0 #0097dc1a, 10px 10px 15px 0 #0097dc1a;
@@ -130,10 +131,12 @@
   background: #22c55e;
   box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.18);
 }
+
 /* media */
 .svc-card_service__media {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 .svc-card_service__media img {
   display: block;
@@ -142,6 +145,25 @@
   max-width: 636px;
   object-fit: contain;
   border-radius: 8px;
+}
+
+/* Индивидуальные размеры изображений */
+.svc-card_service:nth-of-type(1) .svc-card_service__media img {
+  max-width: 636px;
+}
+.svc-card_service:nth-of-type(2) .svc-card_service__media img {
+  max-width: 584px;
+}
+.svc-card_service:nth-of-type(3) .svc-card_service__media img {
+  max-width: 626px;
+}
+.svc-card_service:nth-of-type(4) .svc-card_service__media img {
+  max-width: 300px !important;
+}
+
+/* Выравнивание для --alt карточек */
+.svc-card_service--alt .svc-card_service__media {
+  justify-content: center;
 }
 
 /* ==== ABOUT (2 columns) ==== */
@@ -381,9 +403,9 @@
     line-height: 23px;
   }
 }
+
 /* ===== BLOCK: Почему CIS? ===== */
 .why-cis {
-  /* белый фон как цвет, градиенты — поверх него */
   background-color: #fff;
   background-image: radial-gradient(
       112.63% 418.82% at 110% 90%,
@@ -401,17 +423,15 @@
   margin-top: 100px;
 }
 
-/* контейнер: 1920 => оставляет слева/справа по 320px; по краям всегда >=15px */
 .why-cis__inner {
-  width: min(1280px, calc(100% - 30px)); /* 30px = 15px поля слева+справа */
+  width: min(1280px, calc(100% - 30px));
   margin-inline: auto;
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 колонки на десктопе */
-  column-gap: 95px; /* расстояние между левой и правой частью */
+  grid-template-columns: 1fr 1fr;
+  column-gap: 95px;
   row-gap: 32px;
 }
 
-/* левая колонка */
 .why-cis__eyebrow {
   margin: 0 0 12px;
   font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -424,7 +444,7 @@
 }
 .why-cis__title {
   margin: 0;
-  max-width: 396px; /* по фигме */
+  max-width: 396px;
   font-family: 'Helvetica', sans-serif;
   font-weight: 400;
   font-size: 40px;
@@ -433,7 +453,7 @@
   color: #0c2340;
 }
 .why-cis__lead {
-  margin: 25px 0 0; /* отступ сверху 25px */
+  margin: 25px 0 0;
   max-width: 588px;
   font-family: 'Trebuchet MS', sans-serif;
   font-weight: 400;
@@ -442,20 +462,19 @@
   color: #0c2340;
 }
 
-/* правая колонка (список) */
 .why-cis__list {
   list-style: none;
   margin: 0;
   padding: 0;
-  max-width: 574px; /* ширина текста из фигмы */
+  max-width: 574px;
 }
 .why-cis__item {
   display: grid;
-  grid-template-columns: 14px auto; /* иконка + текст */
+  grid-template-columns: 14px auto;
   align-items: start;
-  column-gap: 10px; /* расстояние между галочкой и текстом */
+  column-gap: 10px;
   row-gap: 0;
-  margin-bottom: 21px; /* расстояние между пунктами 21px */
+  margin-bottom: 21px;
 }
 .why-cis__item:last-child {
   margin-bottom: 0;
@@ -465,7 +484,7 @@
   display: inline-flex;
   width: 14px;
   height: 10px;
-  transform: translateY(7px); /* лёгкая оптика выравнивания с первой строкой */
+  transform: translateY(7px);
 }
 
 .why-cis__text {
@@ -475,26 +494,20 @@
   color: #0c2340;
 }
 
-/* ---------- 1440px ---------- */
 @media (max-width: 1480px) {
   .why-cis__inner {
-    width: min(
-      1280px,
-      calc(100% - 30px)
-    ); /* макет 1440: контейнер 1280, поля 80 → 15px минимально гарантированы */
-    column-gap: 95px; /* оставим как в 1920 для стабильной композиции */
+    width: min(1280px, calc(100% - 30px));
+    column-gap: 95px;
   }
-  /* типографика не меняется на 1440 по твоей просьбе; при желании можно чуть уменьшить lead */
 }
 
-/* ---------- 1024px ---------- */
 @media (max-width: 1060px) {
   .why-cis__inner {
-    width: min(992px, calc(100% - 30px)); /* по краям 15px */
-    column-gap: 100px; /* по ТЗ */
+    width: min(992px, calc(100% - 30px));
+    column-gap: 100px;
   }
   .why-cis__lead {
-    margin-top: 35px; /* по ТЗ */
+    margin-top: 35px;
     max-width: 438px;
     font-size: 16.59px;
   }
@@ -506,12 +519,11 @@
   }
 }
 
-/* ---------- 768px: правая часть уходит вниз ---------- */
 @media (max-width: 800px) {
   .why-cis__inner {
     width: min(736px, calc(100% - 30px));
-    grid-template-columns: 1fr; /* в столбик */
-    row-gap: 35px; /* отступ сверху у правой части */
+    grid-template-columns: 1fr;
+    row-gap: 35px;
   }
   .why-cis__title {
     max-width: 643px;
@@ -519,7 +531,7 @@
     line-height: 44px;
   }
   .why-cis__lead {
-    margin-top: 28px; /* по ТЗ */
+    margin-top: 28px;
     max-width: 723px;
     font-size: 16.59px;
   }
@@ -531,10 +543,9 @@
   }
 }
 
-/* ---------- 390px ---------- */
 @media (max-width: 420px) {
   .why-cis__inner {
-    width: calc(100% - 30px); /* поля по 15px */
+    width: calc(100% - 30px);
     grid-template-columns: 1fr;
   }
   .why-cis__title {
@@ -543,7 +554,7 @@
     max-width: 313px;
   }
   .why-cis__lead {
-    margin-top: 23px; /* общий вертикальный ритм */
+    margin-top: 23px;
     font-size: 16.73px;
     max-width: 354px;
   }
@@ -552,7 +563,7 @@
   }
   .why-cis__item {
     margin-bottom: 18px;
-  } /* по ТЗ */
+  }
   .why-cis__text {
     font-size: 16.59px;
     max-width: 324px;

@@ -129,7 +129,6 @@
   gap: 6px;
   align-self: center; /* вертикально по центру фото */
   justify-self: start;
-  margin-left: 55px; /* 40px фото + 15px требуемый зазор */
   min-width: 0;
 }
 .why-card__name {

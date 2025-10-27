@@ -1,4 +1,7 @@
 /* ================= HERO ================= */
+.svc-scope {
+  font-family: 'Trebuchet MS', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
 .svc-scope .hero {
   position: relative;
   width: 100%;
@@ -30,7 +33,7 @@
   padding: 0 20px;
 }
 .svc-scope .hero__title_s {
-  font-family: 'Source Serif Pro', serif;
+  font-family: 'Helvetica', serif;
   font-weight: 700;
   font-size: 62px;
   line-height: 68px;
@@ -113,10 +116,11 @@
   gap: var(--svc-gap);
 }
 
-/* ================= CARD + variants ================= */
+/* ================= CARD ================= */
 .svc-card_service {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas: 'body media';
   gap: 40px;
   background: #fff;
   border-bottom-right-radius: var(--svc-radius);
@@ -124,6 +128,11 @@
   box-shadow: 0 4px 6px 0 #0097dc1a, 10px 10px 15px 0 #0097dc1a;
   align-items: center;
 }
+.svc-card_service--alt {
+  grid-template-areas: 'media body';
+}
+
+/* Цветовые вариации тени */
 .svc-card_service--blue {
   box-shadow: 0 4px 6px 0 #0097dc1a, 10px 10px 15px 0 #0097dc1a;
 }
@@ -137,16 +146,17 @@
 .svc-card_service.short {
   min-height: 342px;
 }
-.svc-card_service.tall {
-  min-height: 720px;
-}
 
 /* ================= CONTENT ================= */
 .svc-card_service__body_service {
+  grid-area: body;
   max-width: 684px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .svc-card_service__title {
-  font-family: 'Source Serif Pro', serif;
+  font-family: 'Helvetica', serif;
   font-weight: 600;
   font-size: 32px;
   line-height: 40px;
@@ -156,7 +166,7 @@
 }
 .svc-card_service__text {
   margin-top: 20px;
-  font-family: 'Fira Sans', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-family: 'Trebuchet MS', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 26px;
@@ -196,64 +206,27 @@
   box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.18);
 }
 
-/* ================= MEDIA (figure + img) ================= */
+/* ================= MEDIA ================= */
 .svc-card_service__media {
+  grid-area: media;
   margin: 0;
+  min-width: 0;
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* базово картинка справа в своей колонке */
-  min-width: 0;
-  width: 100%;
+  justify-content: center;
+  border-radius: 8px;
+  overflow: visible;
 }
 .svc-card_service__media img {
   display: block;
-  width: 100%;
-  max-width: 636px;
+  max-width: 100%;
+  width: auto;
   height: auto;
   object-fit: contain;
   border-radius: 8px;
 }
 
-/* При желании — индивидуальные max-width (не обязательно) */
-.svc-card_service:nth-of-type(1) .svc-card_service__media img {
-  max-width: 636px;
-}
-.svc-card_service:nth-of-type(2) .svc-card_service__media img {
-  max-width: 584px;
-}
-.svc-card_service:nth-of-type(3) .svc-card_service__media img {
-  max-width: 626px;
-}
-.svc-card_service:nth-of-type(4) .svc-card_service__media img {
-  max-width: 584px;
-}
-.svc-card_service:nth-of-type(5) .svc-card_service__media img {
-  max-width: 610px;
-}
-.svc-card_service:nth-of-type(6) .svc-card_service__media img {
-  max-width: 610px;
-}
-
-/* ================= ZIGZAG НА ДЕСКТОПЕ ================= */
-/* База: текст слева, картинка справа */
-.svc-card_service__body_service {
-  grid-column: 1;
-}
-.svc-card_service__media {
-  grid-column: 2;
-}
-
-/* Чётные карточки (с модификатором) — меняем стороны */
-.svc-card_service--alt .svc-card_service__body_service {
-  grid-column: 2;
-  height: 100%;
-}
-.svc-card_service--alt .svc-card_service__media {
-  grid-column: 1;
-  justify-content: flex-start;
-}
-
-/* ================= RESPONSIVE ================= */
+/* ====== Responsive ====== */
 @media (max-width: 1440px) {
   .svc {
     margin-top: 70px;
@@ -287,28 +260,31 @@
   }
 }
 
-/* Мобильная стакировка: одна колонка, текст сверху, картинка снизу и по центру */
+/* Мобилки: картинка сверху */
 @media (max-width: 900px) {
   .svc-card_service,
   .svc-card_service--alt {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      'media'
+      'body';
+    align-items: stretch;
   }
-
   .svc-card_service__body_service {
-    grid-column: 1;
-    grid-row: 1;
+    grid-area: body;
     max-width: none;
+    justify-content: flex-start;
   }
   .svc-card_service__media {
-    grid-column: 1;
-    grid-row: 2;
+    grid-area: media;
+    align-items: center;
     justify-content: center;
   }
-
   .svc-card_service__media img {
-    max-width: min(100%, 560px);
     width: 100%;
+    max-width: min(100%, 560px);
     height: auto;
+    max-height: none;
   }
 }
 
@@ -337,8 +313,6 @@
     height: 6px;
   }
 }
-
-/* Очень узкие: фикс уезда вправо (<430px) */
 @media (max-width: 430px) {
   .svc {
     padding: 0 12px;
@@ -347,18 +321,7 @@
     padding: 20px;
     border-bottom-right-radius: 36px;
   }
-  .svc-card_service__media {
-    margin: 0;
-    justify-content: center;
-    width: 100%;
-  }
-  .svc-card_service__media img {
-    max-width: 100%;
-    width: 100%;
-    height: auto;
-  }
 }
-
 @media (max-width: 400px) {
   .svc-card_service__title {
     font-size: 22px;

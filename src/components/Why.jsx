@@ -21,18 +21,8 @@ export default function Why() {
             <div className="why-card__content">
               <p className="why-card__text why-card__text--bold">{t('cards.0.text')}</p>
             </div>
-            <img
-              className="why-card__avatar"
-              src="/images/block4_1.png"
-              alt=""
-              width="40"
-              height="40"
-              loading="lazy"
-              decoding="async"
-            />
             <div className="why-card__person">
               <div className="why-card__name">{t('cards.0.name')}</div>
-              {/* <div className="why-card__role">{t('cards.0.role')}</div> */}
             </div>
           </article>
 
@@ -44,18 +34,10 @@ export default function Why() {
             <div className="why-card__content">
               <p className="why-card__text why-card__text--bold">{t('cards.1.text')}</p>
             </div>
-            <img
-              className="why-card__avatar"
-              src="/images/block4_2.png"
-              alt=""
-              width="40"
-              height="40"
-              loading="lazy"
-              decoding="async"
-            />
             <div className="why-card__person">
-              <div className="why-card__name">{t('cards.1.name')}</div>
-              {/* <div className="why-card__role">{t('cards.1.role')}</div> */}
+              <div className="why-card__name" style={{ alignSelf: 'end' }}>
+                {t('cards.1.name')}
+              </div>
             </div>
           </article>
 
@@ -67,15 +49,6 @@ export default function Why() {
             <div className="why-card__content">
               <p className="why-card__text why-card__text--bold">{t('cards.2.text')}</p>
             </div>
-            <img
-              className="why-card__avatar"
-              src="/images/block4_3.png"
-              alt=""
-              width="40"
-              height="40"
-              loading="lazy"
-              decoding="async"
-            />
             <div className="why-card__person">
               <div className="why-card__name">{t('cards.2.name')}</div>
               {/* <div className="why-card__role">{t('cards.2.role')}</div> */}

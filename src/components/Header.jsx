@@ -13,7 +13,7 @@ export default function Header() {
   const [langOpen, setLangOpen] = useState(false);
   const langRef = useRef(null);
   const [mobileLangOpen, setMobileLangOpen] = useState(false);
-  const LangLabel = 'RU';
+  const LangLabel = 'RUS';
   const flagSrc = '/images/icons/russian.svg'; // фиксированный флаг
 
   // drawer
@@ -344,7 +344,7 @@ export default function Header() {
                     style={{ marginRight: 8, verticalAlign: 'middle' }}
                     alt=""
                   />{' '}
-                  RU
+                  RUS
                 </button>
                 <button
                   className="lang__item"
@@ -358,7 +358,7 @@ export default function Header() {
                     style={{ marginRight: 8, verticalAlign: 'middle' }}
                     alt=""
                   />{' '}
-                  KZ
+                  KAZ
                 </button>
                 <button
                   className="lang__item"
@@ -376,7 +376,7 @@ export default function Header() {
                     }}
                     alt=""
                   />{' '}
-                  UK
+                  ENG
                 </button>
               </div>
             </div>
@@ -617,7 +617,7 @@ export default function Header() {
                     style={{ marginRight: 8 }}
                     alt=""
                   />{' '}
-                  RU
+                  RUS
                 </button>
                 <button className="mlang__item" onClick={() => setMobileLangOpen(false)}>
                   <img
@@ -627,7 +627,7 @@ export default function Header() {
                     style={{ marginRight: 8 }}
                     alt=""
                   />{' '}
-                  KZ
+                  KAZ
                 </button>
                 <button className="mlang__item" onClick={() => setMobileLangOpen(false)}>
                   <img
@@ -637,7 +637,7 @@ export default function Header() {
                     style={{ marginRight: 8 }}
                     alt=""
                   />{' '}
-                  UK
+                  ENG
                 </button>
               </div>
             </div>
