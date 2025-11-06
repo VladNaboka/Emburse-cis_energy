@@ -1,3 +1,4 @@
+// src/components/Contact.jsx
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
@@ -35,14 +36,11 @@ function flagUrl(iso2) {
   return `https://flagcdn.com/w20/${iso2}.png`;
 }
 
-/** Маски локальной части номера (без кода страны).
- * Символ '_' — место для цифры.
- * Если страны нет в списке — берём дефолт.
- */
+/** Маски локальной части номера (без кода страны). */
 const PHONE_MASKS = {
-  kz: '(___) ___-__-__', // 10 цифр
-  ru: '(___) ___-__-__', // 10 цифр
-  us: '(___) ___-____', // 10 цифр
+  kz: '(___) ___-__-__',
+  ru: '(___) ___-__-__',
+  us: '(___) ___-____',
   ua: '(___) ___-__-__',
   by: '(__) ___-__-__',
   uz: '(__) ___-__-__',
@@ -54,16 +52,13 @@ const DEFAULT_MASK = '(___) ___-__-__';
 function getMask(iso2) {
   return PHONE_MASKS[iso2] || DEFAULT_MASK;
 }
-
 function digitsOnly(s) {
   return (s || '').replace(/\D/g, '');
 }
-
 function digitsCapFromMask(mask) {
   const m = mask.match(/_/g);
   return m ? m.length : 10;
 }
-
 /** Применяет маску к строке цифр */
 function applyMask(digits, mask) {
   if (!digits) return '';
@@ -72,13 +67,9 @@ function applyMask(digits, mask) {
   for (let i = 0; i < mask.length; i++) {
     const ch = mask[i];
     if (ch === '_') {
-      if (di < digits.length) {
-        res += digits[di++];
-      } else {
-        break; // дальше маску не показываем
-      }
+      if (di < digits.length) res += digits[di++];
+      else break;
     } else {
-      // показываем разделители только когда уже есть цифры
       if (di > 0 || digits.length > 0) res += ch;
     }
   }
@@ -88,6 +79,12 @@ function applyMask(digits, mask) {
 export default function Contact() {
   const t = useT('Contact');
 
+  // безопасный геттер с фолбэком
+  const tt = (key, fallback) => {
+    const v = t(key);
+    return v === key ? fallback : v;
+  };
+
   const [selectedCountry, setSelectedCountry] = useState(COUNTRIES.find((c) => c.iso2 === 'kz'));
 
   const [formData, setFormData] = useState({
@@ -95,7 +92,7 @@ export default function Contact() {
     company: '',
     post: '',
     email: '',
-    phone: '', // локальная часть (с форматированием: (___) ___-__-__)
+    phone: '', // локальная часть (с форматированием)
     topic: '',
     message: '',
     booking: '',
@@ -136,12 +133,11 @@ export default function Contact() {
     const digits = digitsOnly(formData.phone).slice(0, cap);
     const masked = applyMask(digits, mask);
     setFormData((p) => ({ ...p, phone: masked }));
-  }, [selectedCountry]);
+  }, [selectedCountry]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
 
-    // телефон форматируем отдельно
     if (name === 'phone') {
       const mask = getMask(selectedCountry.iso2);
       const cap = digitsCapFromMask(mask);
@@ -172,11 +168,16 @@ export default function Contact() {
     e.preventDefault();
 
     if (!formData.name || !formData.email || !formData.post) {
-      alert('Пожалуйста, заполните обязательные поля: Имя, Email и Должность.');
+      alert(
+        tt(
+          'form.errors.requiredFields',
+          'Пожалуйста, заполните обязательные поля: Имя, Email и Должность.'
+        )
+      );
       return;
     }
     if (formData.booking === 'yes' && (!formData.meetingDate || !formData.timeSlot)) {
-      alert('Пожалуйста, выберите дату и время встречи.');
+      alert(tt('form.errors.meetingFields', 'Пожалуйста, выберите дату и время встречи.'));
       return;
     }
 
@@ -184,7 +185,7 @@ export default function Contact() {
 
     console.log('Form data:', { ...formData, phoneFull, country: selectedCountry });
     console.log('Selected file:', selectedFile);
-    alert('Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
+    alert(tt('form.success', 'Заявка отправлена! Мы свяжемся с вами в ближайшее время.'));
 
     setFormData({
       name: '',
@@ -247,80 +248,91 @@ export default function Contact() {
     );
   });
 
-  // для placeholder: покажем код страны + маску
+  // placeholder и подсказка под телефоном
   const mask = getMask(selectedCountry.iso2);
   const inputPlaceholder = `${selectedCountry.dialCode} ${mask}`;
+  const phoneHintI18n = t('form.phoneHint');
+  const phoneHint =
+    phoneHintI18n === 'form.phoneHint'
+      ? `${tt('form.example', 'Например')}: ${selectedCountry.dialCode} ${mask.replace(/_/g, '•')}`
+      : phoneHintI18n;
 
   return (
     <section className="contact" id="contact">
       <div className="contact__inner">
         <div className="contact__left">
-          <h2 className="contact__title">{t('title')}</h2>
-          <p className="contact__lead">{t('lead')}</p>
+          <h2 className="contact__title">{tt('title', 'Связаться с нами')}</h2>
+          <p className="contact__lead">
+            {tt('lead', 'Начните внедрять инновации уже сегодня — оставьте заявку')}
+          </p>
         </div>
 
         <div className="contact__right">
           <form className="contact-form" onSubmit={handleSubmit} noValidate>
             <div className="contact-form__topline" aria-hidden="true"></div>
-            <h3 className="contact-form__title">{t('form.title')}</h3>
+            <h3 className="contact-form__title">{tt('form.title', 'Заполните форму')}</h3>
 
             <div className="contact-form__fields">
               <label className="field">
-                <span className="field__label">{t('form.name')} *</span>
+                <span className="field__label">{tt('form.name', 'ФИО')} *</span>
                 <input
                   className="field__input"
                   type="text"
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  placeholder={t('form.namePh')}
+                  placeholder={tt('form.namePh', 'Имя Фамилия')}
+                  aria-label={tt('form.name', 'ФИО')}
                   required
                 />
               </label>
 
               <label className="field">
-                <span className="field__label">{t('form.company')}</span>
+                <span className="field__label">{tt('form.company', 'Компания')}</span>
                 <input
                   className="field__input"
                   type="text"
                   name="company"
                   value={formData.company}
                   onChange={handleInputChange}
-                  placeholder="Товарищество с ограниченной ответственностью"
+                  placeholder={tt('form.companyPh', 'Товарищество с ограниченной ответственностью')}
+                  aria-label={tt('form.company', 'Компания')}
                 />
               </label>
 
               <label className="field">
-                <span className="field__label">{t('form.post')} *</span>
+                <span className="field__label">{tt('form.post', 'Должность')} *</span>
                 <input
                   className="field__input"
                   type="text"
                   name="post"
                   value={formData.post}
                   onChange={handleInputChange}
-                  placeholder="Директор"
+                  placeholder={tt('form.postPh', 'Директор')}
+                  aria-label={tt('form.post', 'Должность')}
                   required
                 />
               </label>
 
               <label className="field">
-                <span className="field__label">{t('form.email')} *</span>
+                <span className="field__label">{tt('form.email', 'Email')} *</span>
                 <input
                   className="field__input"
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  placeholder="mail@example.com"
+                  placeholder={tt('form.emailPh', 'mail@example.com')}
+                  aria-label="Email"
                   required
                 />
               </label>
 
               {/* Телефон с маской */}
               <div className="field">
-                <span className="field__label">{t('form.phone')}</span>
+                <span className="field__label">{tt('form.phone', 'Телефон')}</span>
 
-                <div className="phone" role="group" aria-label="Телефон">
+                <div className="phone" role="group" aria-label={tt('form.phone', 'Телефон')}>
                   <button
                     type="button"
                     className="phone__country"
@@ -328,6 +340,7 @@ export default function Contact() {
                     aria-expanded={isCountriesOpen ? 'true' : 'false'}
                     onClick={() => setIsCountriesOpen((v) => !v)}
                     ref={countryBtnRef}
+                    title={tt('form.changeCountry', 'Сменить страну')}
                   >
                     <img
                       className="phone__flag"
@@ -362,10 +375,11 @@ export default function Contact() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    placeholder={inputPlaceholder}
+                    placeholder={tt('form.phonePh', inputPlaceholder)}
                     inputMode="tel"
                     autoComplete="tel"
-                    maxLength={mask.length} /* ограничим длину по маске */
+                    maxLength={mask.length}
+                    aria-label={tt('form.phone', 'Телефон')}
                   />
 
                   {isCountriesOpen && (
@@ -373,12 +387,17 @@ export default function Contact() {
                       <input
                         className="country-popover__search"
                         type="text"
-                        placeholder="Поиск страны или кода…"
+                        placeholder={tt('form.countrySearchPh', 'Поиск страны или кода…')}
                         value={countryQuery}
                         onChange={(e) => setCountryQuery(e.target.value)}
                         autoFocus
+                        aria-label={tt('form.countrySearchPh', 'Поиск страны или кода…')}
                       />
-                      <div className="country-popover__list" role="listbox" aria-label="Коды стран">
+                      <div
+                        className="country-popover__list"
+                        role="listbox"
+                        aria-label={tt('form.countriesAria', 'Коды стран')}
+                      >
                         {filteredCountries.map((c) => (
                           <button
                             key={c.iso2}
@@ -411,23 +430,24 @@ export default function Contact() {
                   )}
                 </div>
 
-                <small className="phone__example">
-                  Например: {selectedCountry.dialCode} {mask.replace(/_/g, '•')}
-                </small>
+                <small className="phone__example">{phoneHint}</small>
               </div>
 
               {/* Бронирование встречи */}
               <label className="field field--select">
-                <span className="field__label">Забронировать встречу?</span>
+                <span className="field__label">
+                  {tt('form.meetingQ', 'Забронировать встречу?')}
+                </span>
                 <select
                   className="field__input"
                   name="booking"
                   value={formData.booking}
                   onChange={handleInputChange}
+                  aria-label={tt('form.meetingQ', 'Забронировать встречу?')}
                 >
-                  <option value="">Выберите</option>
-                  <option value="yes">Да</option>
-                  <option value="no">Нет</option>
+                  <option value="">{tt('form.choose', 'выбрать')}</option>
+                  <option value="yes">{tt('form.meetingYes', 'Да')}</option>
+                  <option value="no">{tt('form.meetingNo', 'Нет')}</option>
                 </select>
                 <svg
                   className="field__chev"
@@ -450,7 +470,7 @@ export default function Contact() {
               {formData.booking === 'yes' && (
                 <>
                   <label className="field booking-field">
-                    <span className="field__label">День встречи</span>
+                    <span className="field__label">{tt('form.meetingDate', 'День встречи')}</span>
                     <input
                       className="field__input"
                       type="date"
@@ -459,19 +479,21 @@ export default function Contact() {
                       onChange={handleInputChange}
                       min={getMinDate()}
                       required
+                      aria-label={tt('form.meetingDate', 'День встречи')}
                     />
                   </label>
 
                   <label className="field field--select booking-field">
-                    <span className="field__label">Удобное время</span>
+                    <span className="field__label">{tt('form.timeSlot', 'Удобное время')}</span>
                     <select
                       className="field__input"
                       name="timeSlot"
                       value={formData.timeSlot}
                       onChange={handleInputChange}
                       required
+                      aria-label={tt('form.timeSlot', 'Удобное время')}
                     >
-                      <option value="">Выберите время</option>
+                      <option value="">{tt('form.chooseTime', 'Выберите время')}</option>
                       <option value="9:00-12:00">9:00-12:00</option>
                       <option value="12:00-15:00">12:00-15:00</option>
                       <option value="15:00-18:00">15:00-18:00</option>
@@ -498,19 +520,25 @@ export default function Contact() {
 
               {/* Направление */}
               <label className="field field--select">
-                <span className="field__label">Какое направление вы бы хотели оптимизировать?</span>
+                <span className="field__label">
+                  {tt('form.directionQ', 'Какое направление вы бы хотели оптимизировать?')}
+                </span>
                 <select
                   className="field__input"
                   name="topic"
                   value={formData.topic}
                   onChange={handleInputChange}
                   required
+                  aria-label={tt(
+                    'form.directionQ',
+                    'Какое направление вы бы хотели оптимизировать?'
+                  )}
                 >
-                  <option value="">Выберите направление</option>
-                  <option value="oil_gas">Нефтегазовое</option>
-                  <option value="mining">Горнорудное</option>
-                  <option value="it">IT</option>
-                  <option value="nuclear">Атомное</option>
+                  <option value="">{tt('form.choose', 'выбрать')}</option>
+                  <option value="oil_gas">{tt('form.direction.oilgas', 'Нефтегазовое')}</option>
+                  <option value="mining">{tt('form.direction.mining', 'Горнорудное')}</option>
+                  <option value="it">{tt('form.direction.it', 'IT')}</option>
+                  <option value="nuclear">{tt('form.direction.atomic', 'Атомное')}</option>
                 </select>
                 <svg
                   className="field__chev"
@@ -532,14 +560,15 @@ export default function Contact() {
 
               {/* Сообщение */}
               <label className="field">
-                <span className="field__label">{t('form.msg')}</span>
+                <span className="field__label">{tt('form.msg', 'Сообщение')}</span>
                 <textarea
                   className="field__input field__textarea"
                   name="message"
                   rows="4"
                   value={formData.message}
                   onChange={handleInputChange}
-                  placeholder={t('form.msgPh')}
+                  placeholder={tt('form.msgPh', 'Кратко опишите запрос')}
+                  aria-label={tt('form.msg', 'Сообщение')}
                 />
               </label>
 
@@ -582,9 +611,11 @@ export default function Contact() {
                     </g>
                   </svg>
 
-                  <p className="upload__title">{t('form.attach')}</p>
+                  <p className="upload__title">{tt('form.attach', 'Прикрепить файл')}</p>
                   <p className="upload__hint" data-upload-hint>
-                    {selectedFile ? selectedFile.name : t('form.drag')}
+                    {selectedFile
+                      ? selectedFile.name
+                      : tt('form.drag', 'Перетащите файл сюда или нажмите')}
                   </p>
                   <p className="upload__file" data-upload-file hidden></p>
                 </label>
@@ -592,7 +623,7 @@ export default function Contact() {
             </div>
 
             <button className="contact-form__btn" type="submit">
-              {t('form.submit')}
+              {tt('form.submit', 'Отправить')}
             </button>
           </form>
         </div>

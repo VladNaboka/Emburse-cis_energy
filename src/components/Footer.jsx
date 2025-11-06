@@ -8,12 +8,12 @@ export default function Footer() {
   return (
     <footer className="site-footer">
       <div className="site-footer__inner">
-        <div className="foot-copyright">Copyright © Все права защищены</div>
+        <div className="foot-copyright">{t('nav.copyright')}</div>
 
-        <nav className="foot-nav" aria-label="Footer">
-          <a href="/#about">О Нас</a>
-          <a href="/#services">Услуги</a>
-          <a href="/#contact">Контакты</a>
+        <nav className="foot-nav" aria-label={t('navAria') || 'Footer'}>
+          <a href="/#about">{t('nav.about')}</a>
+          <a href="/#services">{t('nav.services')}</a>
+          <a href="/#contact">{t('nav.contact')}</a>
         </nav>
 
         <div className="foot-social" aria-label="Social links">

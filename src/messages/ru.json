@@ -108,6 +108,19 @@
       "phone": "Телефон",
       "topic": "Тема обращения",
       "choose": "выбрать",
+      "meetingQ": "Забронировать встречу",
+      "meetingYes": "Да",
+      "meetingNo": "Нет",
+      "meetingDate": "День встречи",
+      "timeSlot": "Удобное время",
+      "chooseTime": "Выберите время",
+      "directionQ": "Какое направление вы бы хотели оптимизировать?",
+      "direction": {
+        "oilgas": "Нефтегазовое",
+        "mining": "Горнорудное",
+        "it": "IT",
+        "atomic": "Атомное"
+      },
       "opt": {
         "consult": "Консультация по проекту",
         "partner": "Партнёрство",
@@ -122,7 +135,12 @@
     }
   },
   "Footer": {
-    "nav": { "about": "О Нас", "services": "Услуги", "contact": "Контакты" }
+    "nav": {
+      "about": "О Нас",
+      "services": "Услуги",
+      "contact": "Контакты",
+      "copyright": "Copyright © Все права защищены"
+    }
   },
   "OilGas": {
     "heroTitle": "Нефтегазовое направление",

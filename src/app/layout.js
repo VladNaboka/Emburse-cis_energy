@@ -1,21 +1,34 @@
+// src/app/layout.js
 import Header from '../components/Header';
 import './globals.css';
 import Footer from '../components/Footer';
+import I18nRootProvider from '../components/I18nRootProvider';
+import { cookies } from 'next/headers';
 
 export const metadata = {
   title: 'CIS ENERGY',
   description: 'CIS ENERGY landing',
   icons: {
     icon: [
-      { url: '/images/logo.png', sizes: '32x32' }, // твой текущий PNG
-      { url: '/images/logo.svg', type: 'image/svg+xml' }, // этот же логотип в SVG
+      { url: '/images/logo.png', sizes: '32x32' },
+      { url: '/images/logo.svg', type: 'image/svg+xml' },
     ],
   },
 };
 
-export default function RootLayout({ children }) {
+// (опционально) гарантируем динамический рендер
+// export const dynamic = 'force-dynamic';
+
+export default async function RootLayout({ children }) {
+  // ⬇️ обязательно await
+  const cookieStore = await cookies();
+  const cookieLangRaw = cookieStore.get('lang')?.value ?? 'ru';
+  const cookieLang = ['ru', 'kz', 'en'].includes(cookieLangRaw.toLowerCase())
+    ? cookieLangRaw.toLowerCase()
+    : 'ru';
+
   return (
-    <html lang="ru">
+    <html lang={cookieLang} suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
@@ -29,9 +42,11 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <Header />
-        {children}
-        <Footer />
+        <I18nRootProvider initialLang={cookieLang}>
+          <Header />
+          {children}
+          <Footer />
+        </I18nRootProvider>
       </body>
     </html>
   );

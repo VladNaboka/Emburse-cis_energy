@@ -3,18 +3,27 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import '../app/styles/header.css';
+import { useI18n } from '../lib/i18nClient';
+import { useT } from '../lib/ruMessages';
 
 export default function Header() {
   // search
   const [searchOpen, setSearchOpen] = useState(false);
   const searchRef = useRef(null);
 
-  // language (UI only, no switching)
   const [langOpen, setLangOpen] = useState(false);
   const langRef = useRef(null);
   const [mobileLangOpen, setMobileLangOpen] = useState(false);
-  const LangLabel = 'RUS';
-  const flagSrc = '/images/icons/russian.svg'; // фиксированный флаг
+  const { lang, setLang } = useI18n();
+  const tH = useT('Header');
+
+  const LangLabel = lang === 'ru' ? 'RUS' : lang === 'en' ? 'ENG' : 'KAZ';
+  const flagSrc =
+    lang === 'ru'
+      ? '/images/icons/russian.svg'
+      : lang === 'en'
+      ? '/images/icons/english.svg'
+      : '/images/icons/KZ.svg';
 
   // drawer
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -85,7 +94,7 @@ export default function Header() {
 
       {/* Навигация */}
       <div className="navwrap" id="mainNav">
-        <div className="nav container" role="navigation" aria-label="Основная навигация">
+        <div className="nav container" role="navigation" aria-label={tH('mainNav')}>
           {/* Лого */}
           <Link className="nav__logo nav__logo--text" href="/">
             <span className="nav__logo-mark" aria-hidden="true"></span>
@@ -96,7 +105,7 @@ export default function Header() {
           <ul className="nav__menu">
             <li className="nav__item nav__item--has-drop">
               <Link className="nav__link" href="/#about">
-                <span className="hover-underline">О компании</span>
+                <span className="hover-underline">{tH('about')}</span>
               </Link>
             </li>
 
@@ -114,7 +123,7 @@ export default function Header() {
                   setServicesOpen(!servicesOpen);
                 }}
               >
-                <span className="hover-underline">Услуги</span>
+                <span className="hover-underline">{tH('services')}</span>
                 <svg
                   className="icon icon--chev"
                   width="12"
@@ -134,7 +143,7 @@ export default function Header() {
               </button>
 
               {/* МЕГА-МЕНЮ */}
-              <div className="mega" role="menu" aria-label="Услуги">
+              <div className="mega" role="menu" aria-label={tH('services')}>
                 <div className="mega__bg"></div>
                 <div className="mega__panel">
                   <ul className="mega__list">
@@ -145,15 +154,6 @@ export default function Header() {
                         onClick={() => setServicesOpen(false)}
                       >
                         <span className="mega__icon" aria-hidden="true">
-                          {/*                           <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                            <path
-                              d="M3 18h18M6 18V9l10 3v6M6 10l5-3 2 3"
-                              stroke="#0C67C2"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg> */}
                           <svg
                             width="43"
                             height="38"
@@ -167,7 +167,7 @@ export default function Header() {
                             />
                           </svg>
                         </span>
-                        <span className="mega__label">Нефтегазовое направление</span>
+                        <span className="mega__label">{tH('svcOilGas')}</span>
                       </Link>
                     </li>
 
@@ -191,7 +191,7 @@ export default function Header() {
                             />
                           </svg>
                         </span>
-                        <span className="mega__label">Горнорудное направление</span>
+                        <span className="mega__label">{tH('svcMining')}</span>
                       </Link>
                     </li>
 
@@ -215,7 +215,7 @@ export default function Header() {
                             />
                           </svg>
                         </span>
-                        <span className="mega__label">IT-направление</span>
+                        <span className="mega__label">{tH('svcIT')}</span>
                       </Link>
                     </li>
 
@@ -239,7 +239,7 @@ export default function Header() {
                             />
                           </svg>
                         </span>
-                        <span className="mega__label">Атомное направление</span>
+                        <span className="mega__label">{tH('svcAtomic')}</span>
                       </Link>
                     </li>
                   </ul>
@@ -254,7 +254,7 @@ export default function Header() {
             </li>
             <li className="nav__item">
               <Link className="nav__link" href="#contact">
-                <span className="hover-underline">Cвязаться с нами</span>
+                <span className="hover-underline">{tH('cta')}</span>
               </Link>
             </li>
           </ul>
@@ -265,7 +265,7 @@ export default function Header() {
             <form
               className={`search${searchOpen ? ' search--open' : ''}`}
               role="search"
-              aria-label="Поиск по сайту"
+              aria-label={tH('search')}
               ref={searchRef}
               onSubmit={(e) => e.preventDefault()}
             >
@@ -281,9 +281,13 @@ export default function Header() {
                 <img src="/images/icons/search.svg" alt="" width="18" height="18" />
               </button>
 
-              <input className="search__input" type="search" placeholder="Поиск..." />
+              <input
+                className="search__input"
+                type="search"
+                placeholder={tH('searchPlaceholder')}
+              />
 
-              <button className="search__submit" type="submit" aria-label="Найти">
+              <button className="search__submit" type="submit" aria-label={tH('searchSubmit')}>
                 <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
                   <path
                     d="M4 12h16M14 6l6 6-6 6"
@@ -335,7 +339,10 @@ export default function Header() {
                 <button
                   className="lang__item"
                   role="menuitem"
-                  onClick={() => setLangOpen(false)} // просто закрываем
+                  onClick={() => {
+                    setLang('ru');
+                    setLangOpen(false);
+                  }}
                 >
                   <img
                     src="/images/icons/russian.svg"
@@ -349,7 +356,10 @@ export default function Header() {
                 <button
                   className="lang__item"
                   role="menuitem"
-                  onClick={() => setLangOpen(false)} // просто закрываем
+                  onClick={() => {
+                    setLang('kk');
+                    setLangOpen(false);
+                  }}
                 >
                   <img
                     src="/images/icons/KZ.svg"
@@ -363,7 +373,10 @@ export default function Header() {
                 <button
                   className="lang__item"
                   role="menuitem"
-                  onClick={() => setLangOpen(false)} // просто закрываем
+                  onClick={() => {
+                    setLang('en');
+                    setLangOpen(false);
+                  }}
                 >
                   <img
                     src="/images/icons/UK.svg"
@@ -609,7 +622,13 @@ export default function Header() {
               </button>
 
               <div className="mlang__menu">
-                <button className="mlang__item" onClick={() => setMobileLangOpen(false)}>
+                <button
+                  className="mlang__item"
+                  onClick={() => {
+                    setLang('ru');
+                    setMobileLangOpen(false);
+                  }}
+                >
                   <img
                     src="/images/icons/russian.svg"
                     width="16"
@@ -619,7 +638,13 @@ export default function Header() {
                   />{' '}
                   RUS
                 </button>
-                <button className="mlang__item" onClick={() => setMobileLangOpen(false)}>
+                <button
+                  className="mlang__item"
+                  onClick={() => {
+                    setLang('kk');
+                    setMobileLangOpen(false);
+                  }}
+                >
                   <img
                     src="/images/icons/KZ.svg"
                     width="16"
@@ -629,7 +654,13 @@ export default function Header() {
                   />{' '}
                   KAZ
                 </button>
-                <button className="mlang__item" onClick={() => setMobileLangOpen(false)}>
+                <button
+                  className="mlang__item"
+                  onClick={() => {
+                    setLang('kz');
+                    setMobileLangOpen(false);
+                  }}
+                >
                   <img
                     src="/images/icons/UK.svg"
                     width="16"

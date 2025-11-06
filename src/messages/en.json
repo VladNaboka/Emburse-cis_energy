@@ -1,68 +1,68 @@
 {
   "Header": {
     "tagline": "Complete Integrated Solutions Energy",
-    "mainNav": "Main navigation",
-    "about": "About",
+    "mainNav": "Main Navigation",
+    "about": "About Company",
     "services": "Services",
-    "search": "Site search",
+    "search": "Search the site",
     "searchPlaceholder": "Search…",
     "searchSubmit": "Search",
     "login": "Login",
-    "cta": "Contact us",
-    "svcOilGas": "Oil & Gas",
-    "svcMining": "Mining",
+    "cta": "Contact Us",
+    "svcOilGas": "Oil & Gas Industry",
+    "svcMining": "Mining Industry",
     "svcIT": "IT Solutions",
     "svcAtomic": "Nuclear Energy"
   },
   "Hero": {
-    "eyebrow": "Our focus — integrated process optimization",
-    "title": "Optimize production and operations. Increase profitability for our clients",
-    "cta": "Book now"
+    "title": "Optimization of production and operational processes",
+    "title_blue": "Profit enhancement for clients",
+    "cta": "Learn More"
   },
   "About": {
-    "eyebrow": "About",
-    "title": "Best practices of leading global companies — optimized for Kazakhstan",
-    "copy": "CIS ENERGY integrates IT into mining & O&G industries of Kazakhstan and optimizes fields using a proprietary methodology by a top Shell expert.",
-    "cta": "Contact us"
+    "eyebrow": "About Company",
+    "title": "Scientific, engineering-innovative and IT solutions for the energy complex",
+    "copy": "CIS ENERGY is a multidisciplinary company engaged in integrating IT technologies into Kazakhstan's extractive industry, optimizing oil & gas and mining fields using the proprietary methodology of a Shell top expert",
+    "cta": "Contact Us"
   },
   "Services": {
-    "eyebrow": "SOLUTION",
-    "title": "The future of your assets — in reliable hands",
-    "lead": "Experience expert knowledge fused with cutting-edge technology to elevate your operations and customer experience.",
-    "more": "Learn more",
+    "eyebrow": "Services",
+    "title": "The future of your assets is in reliable hands",
+    "lead": "Experience the innovative approach of extensive expert experience in synergy with cutting-edge technological solutions, giving your company a completely new level of customer experience",
+    "more": "Learn More",
     "oilgas": {
-      "title": "Oil & Gas",
-      "text": "From conceptual design and production optimization to digitalization and automation of industrial and business processes."
+      "title": "Oil & Gas Division",
+      "text": "Full spectrum of services — from conceptual design and production process optimization to implementation of digital technologies and automation of production and business processes."
     },
     "mining": {
-      "title": "Mining",
-      "text": "Digital transformation, modernization and optimization of mining and processing plants."
+      "title": "Mining Division",
+      "text": "We provide services for digital transformation, modernization and optimization of mining and mineral processing enterprises."
     },
     "it": {
-      "title": "IT",
-      "text": "Data processing for industrial sector, software development, integration and support."
+      "title": "IT Division",
+      "text": "Data processing for the industrial sector of Kazakhstan, development, integration and maintenance of software for industrial enterprises, plants, oil & gas and mining fields."
     },
     "atomic": {
-      "title": "Nuclear industry",
-      "text": ""
+      "title": "Nuclear Division",
+      "text": "Projects of various complexity levels for the nuclear industry, from process optimization to environmental monitoring"
     }
   },
   "Why": {
-    "title": "What our clients say",
+    "title": "Our Client Testimonials",
     "cards": [
       {
-        "text": "We value CIS ENERGY's conceptual plan development... providing practical results and risk reduction.",
-        "name": "TetisAralGaz LLP",
+        "text": "We highly appreciate CIS ENERGY's development of the conceptual plan, where the team proposed comprehensive solutions in geology, technology and economics, baseline and alternative development scenarios, ensuring practical results and risk reduction",
+        "name": "Oil & Gas Production Company",
         "role": "Financial Controller at Hall & Wilcox"
       },
       {
-        "text": "Our cooperation proved CIS ENERGY's competence and result-orientation...",
-        "name": "KazAzot JSC",
+        "text": "Cooperation with CIS ENERGY confirmed their competence and results-oriented approach, and the company's recommendations will become the foundation for implementing our plans and improving field development efficiency",
+        "name": "Gas Production Company",
         "role": "at Buddle Findlay"
       },
       {
-        "text": "CIS ENERGY is a reliable partner with strong data analytics expertise...",
-        "name": "Center for Applied Research & Expertise LLP",
+        "text": "CIS ENERGY carried out a project for us on processing and interpretation of geochemical studies. They proved themselves as true professionals, jointly identified the origin of oils and declared the 'digital oil fingerprint'",
+        "name": "Oil & Gas Production Company",
         "role": "Senior Expense Administrator at International Services, Inc."
       }
     ]
@@ -79,34 +79,48 @@
   },
   "WhyCIS": {
     "eyebrow": "Why CIS?",
-    "title": "Did you know CIS ENERGY were first...",
-    "lead": "Promoting the innovative PSO methodology across Kazakhstan & the CIS, tailored to each client.",
-    "ariaList": "Our advantages",
+    "title": "Did you know that CIS ENERGY became the first...",
+    "lead": "To promote the innovative PSO methodology in Kazakhstan and CIS countries, adapting it individually for each client",
+    "ariaList": "Our Advantages",
     "items": [
-      "Members of AIFC Park of Innovative Technologies (SEZ) and PIT Alatau cluster",
-      "Best global practices — specialists with experience in leading companies",
-      "Integrated multi-disciplinary approach: process optimization, risk mitigation, production intensification",
-      "20+ experts with global & local experience",
-      "600+ man-years of combined expertise",
-      "Academic & applied partnerships with leading universities and institutes",
-      "Integration of ESG reporting and sustainability principles"
+      "Participants of SEZ 'PIT' Alatau and Innovation Cluster 'Park of Innovation Technologies'",
+      "Best global practices — specialized experts with experience in leading global companies",
+      "Integrated multidisciplinary approach: process optimization, risk minimization, production intensification",
+      "20+ experts with international and local experience",
+      "Cumulative specialist experience of over 600 years",
+      "Partnership with leading scientific and educational institutions",
+      "Integration of ESG reporting and sustainable development principles"
     ]
   },
   "Block7": {
     "title": "Copyright"
   },
   "Contact": {
-    "title": "Contact us",
-    "lead": "Start innovating today — send us a request",
+    "title": "Contact Us",
+    "lead": "Start implementing innovations today — submit a request",
     "form": {
       "title": "Fill out the form",
       "name": "Full name",
-      "namePh": "John Smith",
+      "namePh": "First Last",
       "company": "Company",
+      "post": "Job title",
       "email": "Email",
       "phone": "Phone",
-      "topic": "Topic",
+      "topic": "Subject",
       "choose": "choose",
+      "meetingQ": "Book a meeting",
+      "meetingYes": "Yes",
+      "meetingNo": "No",
+      "meetingDate": "Meeting date",
+      "timeSlot": "Preferred time",
+      "chooseTime": "Select a time",
+      "directionQ": "Which area would you like to optimize?",
+      "direction": {
+        "oilgas": "Oil & Gas",
+        "mining": "Mining",
+        "it": "IT",
+        "atomic": "Atomic"
+      },
       "opt": {
         "consult": "Project consultation",
         "partner": "Partnership",
@@ -115,209 +129,194 @@
       },
       "msg": "Message",
       "msgPh": "Briefly describe your request",
-      "attach": "Attach file",
+      "attach": "Attach a file",
       "drag": "Drag a file here or click",
       "submit": "Send"
     }
   },
   "Footer": {
-    "nav": { "about": "About", "services": "Services", "contact": "Contacts" }
+    "nav": {
+      "about": "About Us",
+      "services": "Services",
+      "contact": "Contacts",
+      "copyright": "Copyright © All rights reserved"
+    }
   },
   "OilGas": {
-    "heroTitle": "Oil and gas sector",
-    "heroSubtitle": "Implementation of the world's best practices in the oil and gas industry of Kazakhstan using PSO methodology and digital tools",
+    "heroTitle": "Oil & Gas Division",
+    "heroSubtitle": "Implementation of global best practices in Kazakhstan's oil & gas industry using PSO methodology and digital tools",
     "s1": {
-      "title": "Data processing to identify bottlenecks and develop optimization measures according to the PSO (Production System Optimization) methodology",
-      "li1": "The project includes the analysis of data related to the field infrastructure, control and automation systems (instrumentation and control systems, automated control systems), as well as geological and borehole data.",
-      "li2": "The integrated approach allows us to identify bottlenecks in the production system, develop optimization methods and select the best scenario for further field development."
+      "title": "Data processing to identify 'bottlenecks' and develop optimization measures using PSO (Production System Optimization) methodology",
+      "li1": "The project includes analysis of data related to field infrastructure, control and automation systems (instrumentation, SCADA, production management systems), as well as geological and well data.",
+      "li2": "The integrated approach will identify bottlenecks in the production system, develop new optimization methods and select the best scenario for further field development."
     },
     "s2": {
-      "title": "Data processing for the development of a conceptual design project of the deposit",
-      "li1": "A conceptual plan for the development of HC resources, optimizing capital and operating costs and taking into account uncertainties to maximize profits."
+      "title": "Data processing for developing a conceptual field design project",
+      "li1": "Conceptual development plan for hydrocarbon resources of the field considering optimization of capital and operational costs, allowing geological and operational uncertainties to be accounted for to achieve maximum profit."
     },
     "s3": {
       "title": "Digital integrated modeling of reservoirs, wells and infrastructure facilities",
-      "li1": "Creation of digital twins and integrated modeling within the framework of the URSO strategy for predictive asset analysis and optimization.",
-      "li2": "A single integrated model 'reservoir-well-infrastructure' for production management and optimization of processes in real time."
+      "li1": "Creation of digital twins of fields and services for separate and integrated modeling within the IFRM strategy for predictive analysis and optimization of your assets.",
+      "li2": "The project is aimed at creating a digital integrated model combining reservoir, well and infrastructure into a single system for comprehensive production management. Such a model allows real-time tracking of interconnected changes, identifying inefficient elements and providing recommendations for process optimization and loss reduction."
     },
     "s4": {
       "title": "Automation and digitalization of field infrastructure",
-      "li1": "Development of integrated SCADA systems with centralized control of technological processes in real time."
+      "li1": "Development of integrated SCADA systems for automation and digitalization of field infrastructure, ensuring centralized management of all technological processes in real time."
     },
     "s5": {
-      "title": "R&D and development work in collaboration with leading institutes:",
-      "li1": "Improvement of waterflooding and EOR methods (polymers, etc.).",
-      "li2": "Chemical methods for increasing oil recovery (polymer, surfactant flooding, etc.).",
-      "li3": "New methods for optimizing field development.",
-      "li4": "Digitalization of deposits (smart-field).",
-      "li5": "Digitalization of infrastructure of deposits and enterprises.",
-      "li6": "Surfactant formulations for late-stage deposits."
+      "title": "Research and development work of various complexity levels jointly with leading scientific institutes in the following industry areas (but not limited to):",
+      "li1": "Development and improvement of waterflooding and EOR methods (polymers, etc.)",
+      "li2": "Development of chemical methods to increase oil recovery (polymer, surfactant flooding, etc.)",
+      "li3": "Research and/or development of new methods for optimizing field development",
+      "li4": "Field 'digitalization' (smart-field)",
+      "li5": "'Digitalization' of field and enterprise infrastructure",
+      "li6": "Development of aqueous surfactant solution formulation for waterflooding of late-stage exploitation fields"
     }
   },
   "Mining": {
-    "heroTitle": "Mining",
-    "heroSubtitle": "Boosting productivity and resilience of mining and processing operations through analytics, digital transformation and process optimization.",
+    "heroTitle": "Mining Division",
+    "heroSubtitle": "Increasing productivity and sustainability of mining and mineral processing enterprises through analysis, digital transformation and optimization of production processes.",
     "s1": {
-      "title": "Analysis and optimization of the ore extraction & processing chain",
-      "li1": "End-to-end diagnostics using Big Data, simulation and GIS.",
-      "li2": "Identifying and removing bottlenecks in production and business processes.",
-      "imgAlt": "Mining value chain diagnostics"
+      "title": "Analysis and optimization of ore mining and processing chain",
+      "li1": "The project is aimed at conducting comprehensive diagnostics of the production chain using modern analytical tools — Big Data, modeling and geoinformation systems.",
+      "li2": "This approach allows identifying and eliminating 'bottlenecks' in production and business processes.",
+      "imgAlt": "Analysis and optimization of ore mining and processing chain"
     },
     "s2": {
-      "title": "Implementation of technical monitoring systems for pits and shafts",
-      "li1": "Comprehensive monitoring of equipment and geomechanical parameters with IoT.",
-      "li2": "Lower OPEX, risk prediction and improved safety.",
-      "imgAlt": "Monitoring systems for open pits and shafts"
+      "title": "Development and implementation of technical monitoring systems for open pits and mines",
+      "li1": "The project is aimed at implementing modern technical monitoring systems for comprehensive control of equipment and geomechanical parameters. Data collection from sensors and IoT technologies combined with analytical platforms allows reducing operational costs, forecasting risks and improving safety of production processes.",
+      "imgAlt": "Development and implementation of technical monitoring systems for open pits and mines"
     },
     "s3": {
-      "title": "Automated concentrate accounting system",
-      "li1": "R&D and industrial engineering for accurate product accounting.",
-      "li2": "Real-time data collection increases accuracy and revenue.",
-      "imgAlt": "Automated concentrate accounting"
+      "title": "Development and implementation of automated concentrate accounting system",
+      "li1": "Research work and industrial engineering to ensure automated accounting of slurry products, real-time data collection to improve accounting accuracy and obtain additional profit.",
+      "imgAlt": "Development and implementation of automated concentrate accounting system"
     },
     "s4": {
-      "title": "Processing of geotechnical audit data",
-      "li1": "Expert diagnostics to uncover hidden reserves and optimize costs.",
-      "li2": "Audit outcomes guide sustainable, profitable growth.",
+      "title": "Geotechnical audit at any development stages",
+      "li1": "Expert diagnostics of fields, opening new opportunities for increasing production and optimizing costs. We identify hidden risks and transform them into growth points, helping the client move towards sustainable and profitable development",
       "imgAlt": "Geotechnical audit"
     },
     "s5": {
-      "title": "Geotechnical pit analysis with recommendations",
-      "li1": "Detailed studies and modeling of pit slope stability.",
-      "li2": "Risk-mitigation measures and productivity improvements.",
-      "imgAlt": "Geotechnical pit analysis"
+      "title": "Geotechnical analysis of open pit with development of recommendations and priority measures aimed at ensuring pit wall stability and mining efficiency",
+      "li1": "The project is aimed at conducting detailed geotechnical studies and modeling to analyze rock properties and their bedding conditions. Its goal is to identify potential risk zones, develop recommendations and measures to ensure wall stability and improve safety and mining efficiency.",
+      "imgAlt": "Geotechnical analysis of open pit with development of recommendations and priority measures aimed at ensuring pit wall stability and mining efficiency"
     },
     "s6": {
-      "title": "Tailored digital solutions",
-      "li1": "Integration with enterprise systems (ERP, MES, SCADA, etc.).",
-      "li2": "Custom analytics and dashboards aligned to business goals.",
-      "imgAlt": "Tailored digital solutions"
+      "title": "Development of customized digital solutions according to Client needs",
+      "p1": "Design and development of turnkey software solutions, including but not limited to:",
+      "li1": "Integration with existing enterprise systems (ERP, MES, SCADA, etc.);",
+      "li2": "Configuration of analytical tools and monitoring dashboards",
+      "imgAlt": "Development of customized digital solutions according to Client needs"
     }
   },
   "IT": {
-    "heroTitle": "IT Solutions",
-    "heroSubtitle": "Integration of IT solutions in the extractive industry: from SCADA to BI and digital twins.",
+    "heroTitle": "IT Division",
+    "heroSubtitle": "Integration of IT solutions into the extractive industry: from SCADA to BI and digital twins.",
     "s1": {
-      "title": "Idea Management System",
-      "p1": "A unified space for collecting, evaluating, and implementing employee initiatives with transparent analytics and status tracking.",
-      "imgAlt": "Idea Management System"
+      "title": "Development and implementation of innovative idea management system in companies.",
+      "li1": "The project is aimed at creating a unified information space that will allow effective collection, processing and analysis of employee ideas. Such a system will provide a structured approach to managing initiatives and accelerate their implementation process.",
+      "imgAlt": "Development and implementation of innovative idea management system in companies"
     },
     "s2": {
-      "title": "Electronic Document Management and CRM",
-      "li1": "EDM implementation: secure centralized document access, change control, duplication reduction.",
-      "li2": "CRM: customer interaction analytics, automation of service and sales processes.",
-      "imgAlt": "EDM and CRM"
+      "title": "Development and implementation of electronic document management and CRM systems",
+      "li1": "Integration of a centralized digital platform for secure and convenient access to corporate documents, reducing the risk of loss and duplication of information. Additionally, a CRM system is implemented, allowing analysis of customer interactions and automation of key service and sales processes.",
+      "imgAlt": "Development and implementation of electronic document management and CRM systems"
     },
     "s3": {
-      "title": "Dashboards and BI Analytics",
-      "li1": "Individual departmental panels: quick access to key metrics and monitoring.",
-      "li2": "Unified visual workspace: charts, diagrams, interactive maps.",
-      "imgAlt": "Dashboards and BI"
+      "title": "Development of custom dashboards and analytical systems (BI)",
+      "li1": "The project is aimed at configuring interfaces to meet the needs of different departments for quick access to relevant information and convenient data analysis. Integration of BI platforms with ERP, CRM and other company systems creates a unified ecosystem with visual data presentation in the form of graphs, charts and interactive maps.",
+      "imgAlt": "Development of custom dashboards and analytical systems (BI)"
     },
     "s4": {
-      "title": "Cybersecurity and Data Protection",
-      "li1": "Monitoring and protection of SCADA/PLC/IoT from external and internal threats.",
-      "li2": "Encryption, backup, leak control, and regulatory compliance.",
-      "imgAlt": "Cybersecurity"
+      "title": "Cybersecurity and data protection in the extractive industry",
+      "li1": "The project is aimed at monitoring and protecting industrial controllers, SCADA and IoT devices from external and internal threats.",
+      "li2": "Encryption of technological and commercial information, regular backup and leak control.",
+      "imgAlt": "Cybersecurity and data protection in the extractive industry"
     },
     "s5": {
-      "title": "Custom Digital Solutions",
-      "li1": "Turnkey software development considering corporate standards.",
-      "li2": "Integration with ERP/MES/SCADA and existing infrastructure.",
-      "li3": "Configuration of analytics and monitoring dashboards.",
-      "imgAlt": "Custom Solutions"
+      "title": "Development of customized digital solutions according to Client needs",
+      "li1": "Creation and adaptation of software products of any complexity considering corporate standards, integration with existing infrastructure and scalability.",
+      "imgAlt": "Custom solutions"
     }
   },
   "Atomic": {
     "heroTitle": "Nuclear Industry",
     "heroSubtitle": "",
-
     "s1": {
-      "title": "Development of digital solutions according to individual customer requirements to improve efficiency",
-      "p1": "Development of advanced IT solutions for the nuclear industry involves a comprehensive approach to creating software products and digital platforms fully adapted to specific tasks and customer requirements.",
-      "imgAlt": "Development of digital solutions according to individual customer requirements to improve efficiency"
+      "title": "Development of digital solutions according to Client's individual requirements to improve efficiency",
+      "li1": "Development of advanced IT solutions for the nuclear industry involves a comprehensive approach to creating software products and digital platforms fully adapted to specific tasks and Client specifics.",
+      "imgAlt": "Development of digital solutions according to Client's individual requirements to improve efficiency"
     },
     "s2": {
-      "title": "Transfer of advanced oil industry technologies to the nuclear industry",
-      "li1": "Transfer and adaptation of proven solutions from the oil and gas sector to nuclear industry tasks, ensuring the use of best global practices in digitalization and management of complex production systems.",
-      "imgAlt": "Transfer of advanced oil industry technologies to the nuclear industry"
+      "title": "Transfer of advanced oil industry technologies to nuclear industry",
+      "li1": "Transfer and adaptation of proven oil & gas sector solutions to nuclear industry tasks, ensuring use of global best practices in digitalization and management of complex production systems.",
+      "imgAlt": "Transfer of advanced oil industry technologies to nuclear industry"
     },
     "s3": {
-      "title": "Dashboards and BI Analytics",
-      "li1": "Custom department dashboards: quick access to key metrics and monitoring.",
-      "li2": "Unified visual space: charts, diagrams, interactive maps.",
-      "imgAlt": "Dashboards and BI"
-    },
-    "s4": {
-      "title": "R&D in occupational safety, industrial and radiation safety, ecology and production operations of various complexity in collaboration with leading research institutes include:",
-      "li1": "Research and/or development of new technologies and equipment for industrial waste treatment (sludge, contaminated soil, combustion products, wastewater and other types of production waste).",
+      "title": "R&D on occupational safety, industrial and radiation safety, ecology and production operations of various complexity jointly with leading scientific institutes include:",
+      "li1": "Research and/or development of new technologies and equipment for industrial waste treatment (sludge, contaminated soils, combustion products, wastewater and other types of production waste).",
       "li2": "Research and/or development of energy-efficient technologies for processing municipal and industrial waste into valuable secondary resources, contributing to the creation of high value-added products.",
-      "li3": "Research and/or development of advanced technological solutions for effective water resource management, including systems for collection, treatment and reuse of wastewater, stormwater and saline water.",
-      "li4": "Study of biodiversity status, development of methodology for its conservation and protection from negative impacts, scientific justification of measures to compensate for biodiversity loss during uranium mining.",
-      "imgAlt": "R&D in occupational safety"
+      "li3": "Research and/or development of advanced technological solutions for effective water resource management, including collection, treatment and reuse systems for wastewater, stormwater and saline water.",
+      "li4": "Study of biodiversity status, development of methodology for its conservation and protection from negative impacts, scientific justification of measures to compensate for biodiversity loss during uranium mining",
+      "imgAlt": "R&D on occupational safety"
     }
   },
   "PSO": {
     "heroTitle": "PSO – Production System Optimization",
-    "heroSubtitle": "Oil and gas production system optimization methodology.",
-
+    "heroSubtitle": "Methodology for optimizing oil and gas production systems.",
     "about": {
       "title": "PSO – Production System Optimization",
-      "p1": "The Production System Optimization (PSO) methodology is a practical approach to optimizing oil and gas production systems, outlined in the book of the same name by Borney Waring (Shell).",
-      "quote": "\"Production system optimization is a targeted process of improving the efficiency of an existing field development system through the implementation of management and technological solutions that provide value growth in the short and medium term.\"",
-      "p2": "To date, 17 fields have been successfully optimized using this approach, generating over $1.1 billion in additional profit.",
-      "p3": "Our strategic goal is to promote the dissemination and application of PSO in the oil and gas industry of the Republic of Kazakhstan.",
-      "p4": "One of the key directions is the implementation and teaching of the \"Production System Optimization\" discipline within KBTU programs with emphasis on practical knowledge and international experience."
+      "p1": "The Production System Optimization (PSO) methodology is a practical approach to optimizing oil and gas production systems, outlined in the eponymous book by Borney Waring (Shell).",
+      "quote": "\"Production system optimization is a purposeful process of improving the efficiency of an operating field development system through implementation of managerial and technological solutions ensuring value growth in the short and medium term.\"",
+      "p2": "To date, using this approach, 17 fields have been successfully optimized, providing over $1.1 billion USD in additional profit.",
+      "p3": "Our strategic goal is to facilitate the dissemination and application of PSO in the oil and gas industry of the Republic of Kazakhstan.",
+      "p4": "One of the key directions is the introduction and teaching of the discipline 'Production System Optimization' within KBTU programs with emphasis on practical knowledge and international experience."
     },
-
     "why": {
       "title": "Advantages",
-      "lead": "Promoting PSO methodology in Kazakhstan and CIS with customization for each client.",
+      "lead": "Promotion of PSO methodology in Kazakhstan and CIS with adaptation for each client.",
       "li1": "Interdisciplinary integration and comprehensive approach",
-      "li2": "Production systems and infrastructure optimization",
-      "li3": "Reservoir, well, and infrastructure facility management",
+      "li2": "Optimization of production systems and infrastructure",
+      "li3": "Management of reservoirs, wells and infrastructure facilities",
       "li4": "Accumulated global best practices",
       "li5": "Extracting additional value in medium and short-term perspectives"
     },
-
     "metrics": {
       "m1n": "17",
       "m1t": "Fields optimized",
-      "m2n": "$1.1 billion",
+      "m2n": "$1.1B",
       "m2t": "Additional profit",
       "m3n": "20+",
       "m3t": "Years in industry",
       "m4n": "15",
       "m4t": "Countries of presence"
     },
-
     "cycle": { "title": "PSO Cycle" },
-
     "s1": {
       "title": "Data Collection",
-      "b1": "\"Data is feedstock for decision making\".",
-      "b2": "Collecting data from production assets in the necessary volume and quality for informed optimization decisions.",
+      "b1": "\"Data is feedstock for decision making\"",
+      "b2": "Collection of data from production assets in the required volume and quality, ensuring informed decision-making on production process optimization",
       "imgAlt": "Data Collection"
     },
     "s2": {
       "title": "Inspection and Analysis",
       "b1": "Data without theory is driving without a map, theory without data is driving blind.",
-      "b2": "Inspection and analysis using analytics to identify anomalies and bottlenecks. When implementing \"continuous PSO\" — daily/monthly/annual cycles.",
+      "b2": "Inspection and analysis of data using analytical tools to identify anomalies and 'bottlenecks' in the production system and their subsequent transformation into growth points and optimization opportunities. When implementing 'continuous PSO', data analysis is performed on daily, monthly and annual cycles",
       "imgAlt": "Inspection and Analysis"
     },
     "s3": {
       "title": "Optimization",
-      "b1": "Local optimization does not ensure optimal performance of the entire system.",
-      "b2": "Potential assessment, selection of effective solutions, and formation of a comprehensive plan to extract additional profit.",
+      "b1": "Local optimization does not ensure optimal operation of the entire system",
+      "b2": "Identification and assessment of potential for value enhancement, selection of the most effective solutions and formation of a comprehensive optimization plan aimed at extracting additional profit.",
       "imgAlt": "Optimization"
     },
     "s4": {
       "title": "Implementation",
-      "b1": "Integration of comprehensive optimization solutions to increase resources and value growth.",
-      "b2": "Implementation of changes and collection of feedback to improve future implementations.",
+      "b1": "Integration of comprehensive optimization solutions to increase resource and value growth",
+      "b2": "Implementation of optimal changes to the asset. Collection of feedback to improve future implementations.",
       "imgAlt": "Implementation"
     },
-
     "copyright": { "title": "Copyright" }
   }
 }
