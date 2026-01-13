@@ -202,7 +202,15 @@
 }
 
 .logos__viewport {
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
+  touch-action: pan-x;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+.logos__viewport::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
 }
 
 @media (max-width: 2500px) {
@@ -212,7 +220,6 @@
   .logos__viewport {
     max-width: calc(100vw - 30px);
     padding-inline: 15px;
-    overflow: hidden;
   }
   .logos__track {
     width: 100%;
@@ -292,7 +299,6 @@
   .logos__viewport {
     max-width: 1280px;
     padding-inline: 15px;
-    overflow: hidden;
     box-sizing: content-box;
   }
 

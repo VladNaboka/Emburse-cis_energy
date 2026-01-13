@@ -11,8 +11,8 @@ export default function Block7() {
 
         <picture>
           {/* источники под разные ширины экрана (опционально) */}
-          <source media="(max-width: 420px)" srcSet="/images/block7_390.png" />
-          <source media="(max-width: 800px)" srcSet="/images/block7_768.png" />
+          <source media="(max-width: 420px)" srcSet="/images/block7_768.png" />
+          <source media="(max-width: 800px)" srcSet="/images/block7_1024.png" />
           <source media="(max-width: 1060px)" srcSet="/images/block7_1024.png" />
           <img
             className="b7__img"
