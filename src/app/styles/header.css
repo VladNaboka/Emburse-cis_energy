@@ -775,14 +775,7 @@ body {
 }
 
 .mega__bg {
-  position: absolute;
-  top: 20px;
-  left: 0;
-  right: 0;
-  height: 180px;
-  background: #f1ecea;
-  border-bottom-left-radius: 14px;
-  border-bottom-right-radius: 14px;
+  display: none;
 }
 
 .mega__panel {
@@ -792,7 +785,7 @@ body {
   background: #fff;
   border-radius: 9px;
   padding: 28px 36px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   z-index: 1;
 }
 
