@@ -138,28 +138,33 @@
 
 /* ---------- 390px ---------- */
 @media (max-width: 420px) {
+  .why-cis {
+    margin-top: 60px;
+    padding: 40px 0;
+  }
   .why-cis__inner {
-    width: calc(100% - 30px);
+    width: calc(100% - 32px);
     grid-template-columns: 1fr;
   }
   .why-cis__title {
     font-size: 32px;
     line-height: 36px;
-    max-width: 313px;
+    max-width: 100%;
   }
   .why-cis__lead {
     margin-top: 23px;
     font-size: 16.73px;
-    max-width: 354px;
+    max-width: 100%;
   }
   .why-cis__list {
     margin-top: 23px;
+    max-width: 100%;
   }
   .why-cis__item {
     margin-bottom: 18px;
-  } /* по ТЗ */
+  }
   .why-cis__text {
     font-size: 16.59px;
-    max-width: 324px;
+    max-width: 100%;
   }
 }

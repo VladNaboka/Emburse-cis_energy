@@ -75,7 +75,7 @@
 
 .about__img {
   display: block;
-  width: 500px; /* десктоп как у тебя */
+  width: 580px; /* увеличено */
   height: auto;
   max-width: 100%; /* страховка на любых брейкпоинтах */
 }
@@ -102,7 +102,7 @@
 
   /* На 1440 твоя картинка больше — оставляем, но ограничиваем контейнером */
   .about__img {
-    width: 592px;
+    width: 640px; /* увеличено */
     height: auto;
     margin-top: 12px;
     max-width: 100%;
@@ -133,7 +133,7 @@
   }
 
   .about__img {
-    width: 410px; /* 410×403 по фигме */
+    width: 480px; /* увеличено */
     height: auto;
     margin-top: 0;
     justify-self: end;
@@ -171,7 +171,7 @@
   /* КРИТИЧНО: на ~500px раньше вылазило.
      Делаем картинку адаптивной и не шире контейнера */
   .about__img {
-    width: min(481px, 100%);
+    width: min(540px, 100%); /* увеличено */
     height: auto;
     margin-top: 0;
   }
@@ -193,7 +193,7 @@
   }
 
   .about__img {
-    width: min(420px, 100%);
+    width: min(480px, 100%); /* увеличено */
   }
 }
 
@@ -235,11 +235,11 @@
 
   .about__col--media {
     margin-top: 36px;
-    justify-self: start;
+    justify-self: center;
   }
 
   .about__img {
-    width: min(355px, 100%); /* РАНЬШЕ фикс 355px → могло быть шире контейнера */
+    width: 100%; /* адаптивно на всю ширину контейнера */
     height: auto;
   }
 }

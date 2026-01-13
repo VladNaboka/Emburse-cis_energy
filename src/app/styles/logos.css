@@ -60,6 +60,7 @@
 .logos--clients .c-1 {
   width: 264px;
   height: 90px;
+  margin-right: 20px; /* компенсация пустого места в картинке */
 }
 .logos--clients .c-2 {
   width: 229px;
@@ -88,9 +89,6 @@
 .logos--clients .c-8 {
   width: 200px;
   height: 100px;
-  margin-left: -20px;
-  padding-right: 40px;
-  transform: scale(1.1);
 }
 
 .logos__controls {
