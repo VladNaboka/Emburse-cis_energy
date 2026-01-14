@@ -257,9 +257,6 @@
     bottom: auto;
     width: 100%;
     height: auto;
-    max-height: 160px;
-    object-fit: cover;
-    object-position: center;
     border-top-left-radius: 0;
     border-bottom-right-radius: 60px;
     order: 2;
