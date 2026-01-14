@@ -23,7 +23,7 @@ export default async function RootLayout({ children }) {
   // ⬇️ обязательно await
   const cookieStore = await cookies();
   const cookieLangRaw = cookieStore.get('lang')?.value ?? 'ru';
-  const cookieLang = ['ru', 'kz', 'en'].includes(cookieLangRaw.toLowerCase())
+  const cookieLang = ['ru', 'kk', 'en'].includes(cookieLangRaw.toLowerCase())
     ? cookieLangRaw.toLowerCase()
     : 'ru';
 

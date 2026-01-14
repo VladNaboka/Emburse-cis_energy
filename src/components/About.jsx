@@ -13,7 +13,7 @@ export default function About() {
           <div className="about__copy">
             <p>{t('copy')}</p>
           </div>
-          <a href="#contact" className="btn-cta about__btn">
+          <a href="/#contact" className="btn-cta about__btn">
             {t('cta')}
           </a>
         </div>

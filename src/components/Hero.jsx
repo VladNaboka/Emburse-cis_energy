@@ -26,8 +26,8 @@ export default function Hero() {
           <a className="btn-cta hero__btn" href="/pso">
             {t('cta')}
           </a>
-          <a className="btn_demo" href="#contact">
-            Забронировать демо
+          <a className="btn_demo" href="/#contact">
+            {t('demo')}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="17"

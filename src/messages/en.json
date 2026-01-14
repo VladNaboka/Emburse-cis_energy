@@ -17,7 +17,8 @@
   "Hero": {
     "title": "Optimization of production and operational processes",
     "title_blue": "Profit enhancement for clients",
-    "cta": "Learn More"
+    "cta": "Learn More",
+    "demo": "Book a Demo"
   },
   "About": {
     "eyebrow": "About Company",
@@ -103,7 +104,9 @@
       "name": "Full name",
       "namePh": "First Last",
       "company": "Company",
+      "companyPh": "Limited Liability Company",
       "post": "Job title",
+      "postPh": "Director",
       "email": "Email",
       "phone": "Phone",
       "topic": "Subject",

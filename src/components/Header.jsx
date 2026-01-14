@@ -253,7 +253,7 @@ export default function Header() {
               </Link>
             </li>
             <li className="nav__item">
-              <Link className="nav__link" href="#contact">
+              <Link className="nav__link" href="/#contact">
                 <span className="hover-underline">{tH('cta')}</span>
               </Link>
             </li>
@@ -460,7 +460,7 @@ export default function Header() {
 
           <nav className="mnav">
             <Link className="mnav__link" href="/#about" onClick={() => setDrawerOpen(false)}>
-              О компании
+              {tH('about')}
             </Link>
 
             {/* Mobile Services Menu */}
@@ -472,7 +472,7 @@ export default function Header() {
                 panel.style.display = isOpen ? 'block' : 'none';
               }}
             >
-              Услуги
+              {tH('services')}
               <svg className="icon" width="12" height="12" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M6 9l6 6 6-6"
@@ -509,7 +509,7 @@ export default function Header() {
                       />
                     </svg>
                   </span>
-                  <span>Нефтегазовое направление</span>
+                  <span>{tH('svcOilGas')}</span>
                 </Link>
 
                 <Link
@@ -531,7 +531,7 @@ export default function Header() {
                       />
                     </svg>
                   </span>
-                  <span>Горнорудное направление</span>
+                  <span>{tH('svcMining')}</span>
                 </Link>
 
                 <Link
@@ -553,7 +553,7 @@ export default function Header() {
                       />
                     </svg>
                   </span>
-                  <span>IT-направление</span>
+                  <span>{tH('svcIT')}</span>
                 </Link>
 
                 <Link
@@ -575,7 +575,7 @@ export default function Header() {
                       />
                     </svg>
                   </span>
-                  <span>Атомное направление</span>
+                  <span>{tH('svcAtomic')}</span>
                 </Link>
               </div>
             </div>
@@ -584,8 +584,8 @@ export default function Header() {
               PSO
             </Link>
 
-            <Link className="mnav__link" href="#contact">
-              Cвязаться с нами
+            <Link className="mnav__link" href="/#contact" onClick={() => setDrawerOpen(false)}>
+              {tH('cta')}
             </Link>
           </nav>
 
@@ -657,7 +657,7 @@ export default function Header() {
                 <button
                   className="mlang__item"
                   onClick={() => {
-                    setLang('kz');
+                    setLang('en');
                     setMobileLangOpen(false);
                   }}
                 >
