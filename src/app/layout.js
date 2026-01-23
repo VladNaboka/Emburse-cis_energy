@@ -7,12 +7,35 @@ import { cookies } from 'next/headers';
 
 export const metadata = {
   title: 'CIS ENERGY',
-  description: 'CIS ENERGY landing',
+  description: 'CIS ENERGY - энергетическая компания',
+  keywords: ['CIS ENERGY', 'энергетика', 'energy', 'Казахстан'],
+  authors: [{ name: 'CIS ENERGY' }],
   icons: {
-    icon: [
-      { url: '/images/logo.png', sizes: '32x32' },
-      { url: '/images/logo.svg', type: 'image/svg+xml' },
+    icon: '/logo.jpeg',
+    shortcut: '/logo.jpeg',
+    apple: '/logo.jpeg',
+  },
+  openGraph: {
+    title: 'CIS ENERGY',
+    description: 'CIS ENERGY - энергетическая компания',
+    url: 'https://cisenergy.kz',
+    siteName: 'CIS ENERGY',
+    images: [
+      {
+        url: '/logo.jpeg',
+        width: 512,
+        height: 512,
+        alt: 'CIS ENERGY Logo',
+      },
     ],
+    locale: 'ru_RU',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'CIS ENERGY',
+    description: 'CIS ENERGY - энергетическая компания',
+    images: ['/logo.jpeg'],
   },
 };
 
