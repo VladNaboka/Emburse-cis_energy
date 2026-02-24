@@ -1,8 +1,10 @@
 'use client';
 import { useT } from '../../lib/ruMessages';
+import { useI18n } from '../../lib/i18nClient';
 
 export default function PSOClient() {
   const t = useT('PSO');
+  const { lang } = useI18n();
   return (
     <div className="svc-scope">
       {/* HERO */}
@@ -32,7 +34,7 @@ export default function PSOClient() {
             </div>
           </div>
           <div className="about__col about__col--media">
-            <img className="about_pso__img img-service" src="/images/pso/block1.png" alt="" />
+            <img className="about_pso__img img-service" src={lang === 'en' ? '/images/pso/block1_en.png' : '/images/pso/block1.png'} alt="" />
           </div>
         </div>
       </section>

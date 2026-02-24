@@ -1,8 +1,10 @@
 'use client';
 import { useT } from '../../lib/ruMessages';
+import { useI18n } from '../../lib/i18nClient';
 
 export default function MiningClient() {
   const t = useT('Mining');
+  const { lang } = useI18n();
   return (
     <div className="svc-scope">
       <section className="hero">
@@ -59,7 +61,7 @@ export default function MiningClient() {
             </div>
           </div>
           <figure className="svc-card_service__media">
-            <img src="/images/services_2/block4.png" alt={t('s3.imgAlt')} />
+            <img src={lang === 'en' ? '/images/services_2/block4_en.png' : '/images/services_2/block4.png'} alt={t('s3.imgAlt')} />
           </figure>
         </article>
 
