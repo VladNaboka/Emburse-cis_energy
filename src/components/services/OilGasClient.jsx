@@ -1,6 +1,9 @@
 'use client';
+import Image from 'next/image';
 import { useT } from '../../lib/ruMessages';
 import { useI18n } from '../../lib/i18nClient';
+
+const imgStyle = { width: '100%', height: 'auto' };
 
 export default function OilGasClient() {
   const t = useT('OilGas');
@@ -8,7 +11,7 @@ export default function OilGasClient() {
   return (
     <div className="svc-scope">
       <section className="hero">
-        <img src="/images/services_1/main.png" alt={t('heroTitle')} className="hero__bg" />
+        <Image src="/images/services_1/main.png" alt={t('heroTitle')} className="hero__bg" width={1920} height={698} sizes="100vw" priority />
         <div className="hero__overlay">
           <div className="hero__content container">
             <h1 className="hero__title_s">{t('heroTitle')}</h1>
@@ -29,13 +32,13 @@ export default function OilGasClient() {
             </div>
           </div>
           <figure className="svc-card_service__media">
-            <img src="/images/services_1/block2.png" alt="PSO" />
+            <Image src="/images/services_1/block2.png" alt="PSO" width={1200} height={800} style={imgStyle} sizes="(max-width: 768px) 100vw, 50vw" />
           </figure>
         </article>
 
         <article className="svc-card_service svc-card_service--amber svc-card_service--alt">
           <figure className="svc-card_service__media">
-            <img src="/images/services_1/block3.png" alt="Conceptual design" />
+            <Image src="/images/services_1/block3.png" alt="Conceptual design" width={1200} height={800} style={imgStyle} sizes="(max-width: 768px) 100vw, 50vw" />
           </figure>
           <div className="svc-card_service__body_service">
             <h2 className="svc-card_service__title">{t('s2.title')}</h2>
@@ -59,14 +62,14 @@ export default function OilGasClient() {
             </div>
           </div>
           <figure className="svc-card_service__media">
-            <img src={lang === 'en' ? '/images/services_1/block4_en.png' : '/images/services_1/block4.png'} alt={t('s3.title')} />
+            <Image src={lang === 'en' ? '/images/services_1/block4_en.png' : '/images/services_1/block4.png'} alt={t('s3.title')} width={1200} height={800} style={imgStyle} sizes="(max-width: 768px) 100vw, 50vw" />
           </figure>
         </article>
 
         {/* 4 — текст справа, картинка слева */}
         <article className="svc-card_service svc-card_service--blue svc-card_service--alt short">
           <figure className="svc-card_service__media">
-            <img src="/images/services_1/block5.png" alt="SCADA" />
+            <Image src="/images/services_1/block5.png" alt="SCADA" width={1200} height={800} style={imgStyle} sizes="(max-width: 768px) 100vw, 50vw" />
           </figure>
           <div className="svc-card_service__body_service">
             <h2 className="svc-card_service__title">{t('s4.title')}</h2>
@@ -97,7 +100,7 @@ export default function OilGasClient() {
             </div>
           </div>
           <figure className="svc-card_service__media">
-            <img src="/images/services_1/block6.png" alt="R&D" />
+            <Image src="/images/services_1/block6.png" alt="R&D" width={1200} height={800} style={imgStyle} sizes="(max-width: 768px) 100vw, 50vw" />
           </figure>
         </article>
       </section>

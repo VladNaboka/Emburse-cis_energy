@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import { useT } from '../lib/ruMessages';
 import '../app/styles/b7.css';
 
@@ -9,19 +10,14 @@ export default function Block7() {
       <div className="b7__inner">
         <h2 className="b7__title">{t('title')}</h2>
 
-        <picture>
-          {/* источники под разные ширины экрана (опционально) */}
-          <source media="(max-width: 420px)" srcSet="/images/block7_768.png" />
-          <source media="(max-width: 800px)" srcSet="/images/block7_1024.png" />
-          <source media="(max-width: 1060px)" srcSet="/images/block7_1024.png" />
-          <img
-            className="b7__img"
-            src="/images/block7_1920.png"
-            alt=""
-            loading="lazy"
-            decoding="async"
-          />
-        </picture>
+        <Image
+          className="b7__img"
+          src="/images/block7_1920.png"
+          alt=""
+          width={1920}
+          height={600}
+          sizes="100vw"
+        />
       </div>
     </section>
   );

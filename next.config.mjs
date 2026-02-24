@@ -1,7 +1,10 @@
-// next.config.mjs (i18n removed)
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // ваши опции Next.js при необходимости
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    deviceSizes: [390, 768, 1024, 1920],
+    imageSizes: [16, 32, 48, 64, 96, 128, 178, 256],
+  },
 };
 
 export default nextConfig;

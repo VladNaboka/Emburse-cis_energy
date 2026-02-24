@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import { useT } from '../lib/ruMessages';
 import '../app/styles/services.css';
 
@@ -37,14 +38,12 @@ export default function Services() {
                 </svg>
               </a>
             </div>
-            <img
+            <Image
               className="svc-card__img"
               src="/images/block3_1.png"
               alt=""
-              width="178"
-              height="118"
-              loading="lazy"
-              decoding="async"
+              width={178}
+              height={118}
             />
           </article>
 
@@ -69,14 +68,12 @@ export default function Services() {
                 </svg>
               </a>
             </div>
-            <img
+            <Image
               className="svc-card__img"
               src="/images/block3_2.png"
               alt=""
-              width="178"
-              height="118"
-              loading="lazy"
-              decoding="async"
+              width={178}
+              height={118}
             />
           </article>
 
@@ -101,14 +98,12 @@ export default function Services() {
                 </svg>
               </a>
             </div>
-            <img
+            <Image
               className="svc-card__img"
               src="/images/block3_3.png"
               alt=""
-              width="178"
-              height="118"
-              loading="lazy"
-              decoding="async"
+              width={178}
+              height={118}
             />
           </article>
 
@@ -133,14 +128,12 @@ export default function Services() {
                 </svg>
               </a>
             </div>
-            <img
+            <Image
               className="svc-card__img"
               src="/images/block3_4.png"
               alt=""
-              width="178"
-              height="118"
-              loading="lazy"
-              decoding="async"
+              width={178}
+              height={118}
             />
           </article>
         </div>

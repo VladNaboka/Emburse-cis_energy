@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import { useT } from '../lib/ruMessages';
 import '../app/styles/about.css';
 
@@ -19,14 +20,12 @@ export default function About() {
         </div>
 
         <div className="about__col about__col--media">
-          <img
+          <Image
             className="about__img"
             src="/images/block2.png"
             alt=""
-            width="592"
-            height="473"
-            loading="lazy"
-            decoding="async"
+            width={592}
+            height={473}
           />
         </div>
       </div>

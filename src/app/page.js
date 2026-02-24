@@ -1,17 +1,16 @@
-// src/app/[locale]/page.jsx
- 
+import dynamic from 'next/dynamic';
+
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Services from '../components/Services';
-import Why from '../components/Why';
-import LogosPartners from '../components/LogosPartners';
-import LogosClients from '../components/LogosClients';
-import WhyCIS from '../components/WhyCIS';
-import Block7 from '../components/Block7';
-import Contact from '../components/Contact';
 
-import LogosEnhancer from '../components/LogosEnhancer';
-import ContactEnhancer from '../components/ContactEnhancer';
+const Why = dynamic(() => import('../components/Why'));
+const LogosClients = dynamic(() => import('../components/LogosClients'));
+const WhyCIS = dynamic(() => import('../components/WhyCIS'));
+const Block7 = dynamic(() => import('../components/Block7'));
+const Contact = dynamic(() => import('../components/Contact'));
+const LogosEnhancer = dynamic(() => import('../components/LogosEnhancer'));
+const ContactEnhancer = dynamic(() => import('../components/ContactEnhancer'));
 
 export default function Page() {
   return (

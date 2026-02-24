@@ -1,5 +1,6 @@
 // src/components/LogosPartners.jsx
 'use client';
+import Image from 'next/image';
 import { useT } from '../lib/ruMessages';
 import '../app/styles/logos.css';
 
@@ -10,10 +11,10 @@ export default function LogosPartners() {
       <h2 className="logos__title">{t('title')}</h2>
       <div className="logos__viewport">
         <div className="logos__track">
-          <img className="p-1" src="/images/partners_1.png" alt="Partner 1" />
-          <img className="p-2" src="/images/partners_2.png" alt="Partner 2" />
-          <img className="p-3" src="/images/partners_3.png" alt="Partner 3" />
-          <img className="p-4" src="/images/partners_4.png" alt="Partner 4" />
+          <Image className="p-1" src="/images/partners_1.png" alt="Partner 1" width={200} height={80} />
+          <Image className="p-2" src="/images/partners_2.png" alt="Partner 2" width={200} height={80} />
+          <Image className="p-3" src="/images/partners_3.png" alt="Partner 3" width={200} height={80} />
+          <Image className="p-4" src="/images/partners_4.png" alt="Partner 4" width={200} height={80} />
         </div>
       </div>
       <div className="logos__controls">

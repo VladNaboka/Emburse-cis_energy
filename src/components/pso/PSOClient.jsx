@@ -1,6 +1,9 @@
 'use client';
+import Image from 'next/image';
 import { useT } from '../../lib/ruMessages';
 import { useI18n } from '../../lib/i18nClient';
+
+const imgStyle = { width: '100%', height: 'auto' };
 
 export default function PSOClient() {
   const t = useT('PSO');
@@ -9,7 +12,7 @@ export default function PSOClient() {
     <div className="svc-scope">
       {/* HERO */}
       <section className="hero">
-        <img src="/images/pso/main.png" alt={t('heroTitle') || 'PSO'} className="hero__bg" />
+        <Image src="/images/pso/main.png" alt={t('heroTitle') || 'PSO'} className="hero__bg" width={1920} height={698} sizes="100vw" priority />
         <div className="hero__overlay">
           <div className="hero__content container">
             <h1 className="hero__title_s">{t('heroTitle')}</h1>
@@ -34,7 +37,7 @@ export default function PSOClient() {
             </div>
           </div>
           <div className="about__col about__col--media">
-            <img className="about_pso__img img-service" src={lang === 'en' ? '/images/pso/block1_en.png' : '/images/pso/block1.png'} alt="" />
+            <Image className="about_pso__img img-service" src={lang === 'en' ? '/images/pso/block1_en.png' : '/images/pso/block1.png'} alt="" width={1200} height={800} style={imgStyle} sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
         </div>
       </section>
@@ -195,14 +198,14 @@ export default function PSOClient() {
             </div>
           </div>
           <figure className="svc-card_service__media">
-            <img src="/images/pso/block4.png" alt={t('s1.imgAlt')} />
+            <Image src="/images/pso/block4.png" alt={t('s1.imgAlt')} width={1200} height={800} style={imgStyle} sizes="(max-width: 768px) 100vw, 50vw" />
           </figure>
         </article>
 
         {/* 2 - изображение слева */}
         <article className="svc-card_service svc-card_service--amber svc-card_service--alt">
           <figure className="svc-card_service__media">
-            <img src="/images/pso/block5.png" alt={t('s2.imgAlt')} />
+            <Image src="/images/pso/block5.png" alt={t('s2.imgAlt')} width={1200} height={800} style={imgStyle} sizes="(max-width: 768px) 100vw, 50vw" />
           </figure>
           <div className="svc-card_service__body">
             <h2 className="svc-card_service__title">{t('s2.title')}</h2>
@@ -231,7 +234,7 @@ export default function PSOClient() {
             </div>
           </div>
           <figure className="svc-card_service__media">
-            <img src="/images/pso/block6.png" alt={t('s3.imgAlt')} />
+            <Image src="/images/pso/block6.png" alt={t('s3.imgAlt')} width={1200} height={800} style={imgStyle} sizes="(max-width: 768px) 100vw, 50vw" />
           </figure>
         </article>
 
@@ -241,7 +244,7 @@ export default function PSOClient() {
           style={{ marginBottom: '100px' }}
         >
           <figure className="svc-card_service__media">
-            <img src="/images/pso/block7.png" alt={t('s4.imgAlt')} />
+            <Image src="/images/pso/block7.png" alt={t('s4.imgAlt')} width={1200} height={800} style={imgStyle} sizes="(max-width: 768px) 100vw, 50vw" />
           </figure>
           <div className="svc-card_service__body">
             <h2 className="svc-card_service__title">{t('s4.title')}</h2>
@@ -262,12 +265,15 @@ export default function PSOClient() {
         <div className="b7__inner">
           <h2 className="b7__title">{t('copyright.title')}</h2>
 
-          <picture>
-            <source media="(max-width: 420px)" srcSet="/images/block7_768.png" />
-            <source media="(max-width: 800px)" srcSet="/images/block7_1024.png" />
-            <source media="(max-width: 1060px)" srcSet="/images/block7_1024.png" />
-            <img className="b7__img" src="/images/block7_1920.png" alt="" loading="lazy" />
-          </picture>
+          <Image
+            className="b7__img"
+            src="/images/block7_1920.png"
+            alt=""
+            width={1920}
+            height={600}
+            sizes="100vw"
+            style={imgStyle}
+          />
         </div>
       </section>
     </div>

@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import { useT } from '../lib/ruMessages';
 import '../app/styles/hero.css';
 
@@ -7,13 +8,14 @@ export default function Hero() {
   return (
     <section className="hero">
       <div className="hero__media" aria-hidden="true">
-        <picture>
-          <source media="(max-width: 420px)" srcSet="/images/hero/main390.png" />
-          <source media="(max-width: 800px)" srcSet="/images/hero/main768.png" />
-          <source media="(max-width: 1060px)" srcSet="/images/hero/main1024.png" />
-          <source media="(max-width: 1480px)" srcSet="/images/hero/main1920.png" />
-          <img src="/images/hero/main1920.png" alt="" loading="eager" decoding="async" />
-        </picture>
+        <Image
+          src="/images/hero/main1920.png"
+          alt=""
+          width={1920}
+          height={800}
+          sizes="100vw"
+          priority
+        />
       </div>
       <div className="hero__content container">
         <h1 className="hero__title" style={{ color: '#0c2340' }}>

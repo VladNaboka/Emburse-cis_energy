@@ -4,6 +4,21 @@ import './globals.css';
 import Footer from '../components/Footer';
 import I18nRootProvider from '../components/I18nRootProvider';
 import { cookies } from 'next/headers';
+import { Inter, Source_Serif_4 } from 'next/font/google';
+
+const inter = Inter({
+  subsets: ['latin', 'cyrillic'],
+  weight: ['400', '600', '900'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+const sourceSerif = Source_Serif_4({
+  subsets: ['latin', 'cyrillic'],
+  weight: ['400', '600'],
+  variable: '--font-source-serif',
+  display: 'swap',
+});
 
 export const metadata = {
   title: 'CIS ENERGY',
@@ -39,11 +54,7 @@ export const metadata = {
   },
 };
 
-// (опционально) гарантируем динамический рендер
-// export const dynamic = 'force-dynamic';
-
 export default async function RootLayout({ children }) {
-  // ⬇️ обязательно await
   const cookieStore = await cookies();
   const cookieLangRaw = cookieStore.get('lang')?.value ?? 'ru';
   const cookieLang = ['ru', 'kk', 'en'].includes(cookieLangRaw.toLowerCase())
@@ -51,19 +62,7 @@ export default async function RootLayout({ children }) {
     : 'ru';
 
   return (
-    <html lang={cookieLang} suppressHydrationWarning>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang={cookieLang} className={`${inter.variable} ${sourceSerif.variable}`} suppressHydrationWarning>
       <body>
         <I18nRootProvider initialLang={cookieLang}>
           <Header />
