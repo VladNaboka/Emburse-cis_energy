@@ -45,7 +45,7 @@ export default function PSOClient() {
             <p className="why-cis__lead">{t('why.lead')}</p>
           </header>
 
-          <div className="why-cis__right" aria-label="Наши преимущества">
+          <div className="why-cis__right" aria-label={t('why.ariaList')}>
             <ul className="why-cis__list">
               <li className="why-cis__item">
                 <span className="why-cis__check" aria-hidden="true">

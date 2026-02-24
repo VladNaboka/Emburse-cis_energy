@@ -87,7 +87,7 @@ export default function Header() {
       <div className="topbar">
         <div className="topbar__inner">
           <span className="topbar__text">
-            <strong>Complete Intergrated Solutions Energy</strong>
+            <strong>{tH('tagline')}</strong>
           </span>
         </div>
       </div>
@@ -396,7 +396,7 @@ export default function Header() {
 
             <button
               className="burger"
-              aria-label="Открыть меню"
+              aria-label={tH('openMenu')}
               aria-expanded={drawerOpen}
               aria-controls="mobileNav"
               onClick={() => setDrawerOpen(true)}
@@ -430,7 +430,7 @@ export default function Header() {
           className="drawer__panel"
           role="dialog"
           aria-modal="true"
-          aria-label="Мобильное меню"
+          aria-label={tH('mobileMenu')}
         >
           <div className="drawer__head">
             <Link
@@ -445,7 +445,7 @@ export default function Header() {
             <button
               className="drawer__close"
               onClick={() => setDrawerOpen(false)}
-              aria-label="Закрыть меню"
+              aria-label={tH('closeMenu')}
             >
               <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
                 <path

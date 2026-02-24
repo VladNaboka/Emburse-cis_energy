@@ -12,7 +12,10 @@
     "svcOilGas": "Oil & Gas Industry",
     "svcMining": "Mining Industry",
     "svcIT": "IT Solutions",
-    "svcAtomic": "Nuclear Energy"
+    "svcAtomic": "Nuclear Energy",
+    "openMenu": "Open menu",
+    "mobileMenu": "Mobile menu",
+    "closeMenu": "Close menu"
   },
   "Hero": {
     "title": "Optimization of production and operational processes",
@@ -122,7 +125,7 @@
         "oilgas": "Oil & Gas",
         "mining": "Mining",
         "it": "IT",
-        "atomic": "Atomic"
+        "atomic": "Nuclear"
       },
       "opt": {
         "consult": "Project consultation",
@@ -279,6 +282,7 @@
     "why": {
       "title": "Advantages",
       "lead": "Promotion of PSO methodology in Kazakhstan and CIS with adaptation for each client.",
+      "ariaList": "Our Advantages",
       "li1": "Interdisciplinary integration and comprehensive approach",
       "li2": "Optimization of production systems and infrastructure",
       "li3": "Management of reservoirs, wells and infrastructure facilities",
