@@ -164,7 +164,9 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!formData.name || !formData.email || !formData.post) {
@@ -183,26 +185,48 @@ export default function Contact() {
 
     const phoneFull = `${selectedCountry.dialCode} ${formData.phone}`.trim();
 
-    console.log('Form data:', { ...formData, phoneFull, country: selectedCountry });
-    console.log('Selected file:', selectedFile);
-    alert(tt('form.success', 'Заявка отправлена! Мы свяжемся с вами в ближайшее время.'));
+    setIsSubmitting(true);
+    try {
+      const body = new FormData();
+      Object.entries(formData).forEach(([key, val]) => {
+        if (key === 'phone') return;
+        body.append(key, val);
+      });
+      body.append('phone', phoneFull);
+      if (selectedFile) body.append('file', selectedFile);
 
-    setFormData({
-      name: '',
-      company: '',
-      post: '',
-      email: '',
-      phone: '',
-      topic: '',
-      message: '',
-      booking: '',
-      meetingDate: '',
-      timeSlot: '',
-    });
-    setSelectedCountry(COUNTRIES.find((c) => c.iso2 === 'kz'));
-    setSelectedFile(null);
-    setCountryQuery('');
-    setIsCountriesOpen(false);
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        body,
+      });
+      const result = await res.json();
+
+      if (result.success) {
+        alert(tt('form.success', 'Заявка отправлена! Мы свяжемся с вами в ближайшее время.'));
+        setFormData({
+          name: '',
+          company: '',
+          post: '',
+          email: '',
+          phone: '',
+          topic: '',
+          message: '',
+          booking: '',
+          meetingDate: '',
+          timeSlot: '',
+        });
+        setSelectedCountry(COUNTRIES.find((c) => c.iso2 === 'kz'));
+        setSelectedFile(null);
+        setCountryQuery('');
+        setIsCountriesOpen(false);
+      } else {
+        alert(tt('form.errors.sendFailed', 'Не удалось отправить заявку. Попробуйте позже.'));
+      }
+    } catch {
+      alert(tt('form.errors.sendFailed', 'Не удалось отправить заявку. Попробуйте позже.'));
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // drag & drop
@@ -622,8 +646,10 @@ export default function Contact() {
               </div>
             </div>
 
-            <button className="contact-form__btn" type="submit">
-              {tt('form.submit', 'Отправить')}
+            <button className="contact-form__btn" type="submit" disabled={isSubmitting}>
+              {isSubmitting
+                ? tt('form.sending', 'Отправка...')
+                : tt('form.submit', 'Отправить')}
             </button>
           </form>
         </div>
