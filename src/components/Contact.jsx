@@ -217,6 +217,7 @@ export default function Contact() {
         });
         setSelectedCountry(COUNTRIES.find((c) => c.iso2 === 'kz'));
         setSelectedFile(null);
+        if (fileInputRef.current) fileInputRef.current.value = '';
         setCountryQuery('');
         setIsCountriesOpen(false);
       } else {
@@ -607,42 +608,61 @@ export default function Contact() {
                   onChange={handleFileChange}
                   hidden
                 />
-                <label
-                  className="upload__box"
-                  htmlFor="file"
-                  onDragEnter={handleDragEnter}
-                  onDragOver={handleDragOver}
-                  onDragLeave={handleDragLeave}
-                  onDrop={handleDrop}
-                  onClick={handleFileSelect}
-                >
-                  <svg
-                    className="upload__icon"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="96"
-                    height="40"
-                    viewBox="0 0 96 40"
-                    aria-hidden="true"
+                {selectedFile ? (
+                  <div className="upload__attached">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="#0097dc" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M14 2V8H20" stroke="#0097dc" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    <span className="upload__attached-name">{selectedFile.name}</span>
+                    <button
+                      type="button"
+                      className="upload__attached-remove"
+                      onClick={() => {
+                        setSelectedFile(null);
+                        if (fileInputRef.current) fileInputRef.current.value = '';
+                      }}
+                      aria-label="Удалить файл"
+                    >
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                      </svg>
+                    </button>
+                  </div>
+                ) : (
+                  <label
+                    className="upload__box"
+                    htmlFor="file"
+                    onDragEnter={handleDragEnter}
+                    onDragOver={handleDragOver}
+                    onDragLeave={handleDragLeave}
+                    onDrop={handleDrop}
                   >
-                    <rect width="96" height="40" rx="8" fill="#F2F4F7" />
-                    <g clipPath="url(#clip0_557_1180)">
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M41.83 13.106C41.996 12.774 42.251 12.495 42.567 12.299C42.882 12.104 43.246 12.0004 43.617 12H52.381C52.753 12 53.117 12.1035 53.433 12.299C53.749 12.494 54.004 12.774 54.17 13.106L57.682 20.131C57.89 20.547 57.999 21.006 58 21.471V27C58 27.53 57.789 28.039 57.414 28.414C57.039 28.789 56.53 29 56 29H40C39.47 29 38.961 28.789 38.586 28.414C38.211 28.039 38 27.53 38 27V21.472C38 21.007 38.109 20.547 38.317 20.131L41.83 13.106Z"
-                        fill="#98A0B4"
-                      />
-                    </g>
-                  </svg>
+                    <svg
+                      className="upload__icon"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="96"
+                      height="40"
+                      viewBox="0 0 96 40"
+                      aria-hidden="true"
+                    >
+                      <rect width="96" height="40" rx="8" fill="#F2F4F7" />
+                      <g clipPath="url(#clip0_557_1180)">
+                        <path
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          d="M41.83 13.106C41.996 12.774 42.251 12.495 42.567 12.299C42.882 12.104 43.246 12.0004 43.617 12H52.381C52.753 12 53.117 12.1035 53.433 12.299C53.749 12.494 54.004 12.774 54.17 13.106L57.682 20.131C57.89 20.547 57.999 21.006 58 21.471V27C58 27.53 57.789 28.039 57.414 28.414C57.039 28.789 56.53 29 56 29H40C39.47 29 38.961 28.789 38.586 28.414C38.211 28.039 38 27.53 38 27V21.472C38 21.007 38.109 20.547 38.317 20.131L41.83 13.106Z"
+                          fill="#98A0B4"
+                        />
+                      </g>
+                    </svg>
 
-                  <p className="upload__title">{tt('form.attach', 'Прикрепить файл')}</p>
-                  <p className="upload__hint" data-upload-hint>
-                    {selectedFile
-                      ? selectedFile.name
-                      : tt('form.drag', 'Перетащите файл сюда или нажмите')}
-                  </p>
-                  <p className="upload__file" data-upload-file hidden></p>
-                </label>
+                    <p className="upload__title">{tt('form.attach', 'Прикрепить файл')}</p>
+                    <p className="upload__hint">
+                      {tt('form.drag', 'Перетащите файл сюда или нажмите')}
+                    </p>
+                  </label>
+                )}
               </div>
             </div>
 

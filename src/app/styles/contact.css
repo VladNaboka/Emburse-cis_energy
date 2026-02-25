@@ -200,6 +200,45 @@
   font-size: 14px;
   color: #1d1f1e;
 }
+.upload__attached {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 424px;
+  padding: 14px 16px;
+  border-radius: 8.66px;
+  border: 1px solid #0097dc;
+  background: #eef8ff;
+  box-sizing: border-box;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+.upload__attached-name {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1d1f1e;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.upload__attached-remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #98a0b4;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s, color 0.15s;
+}
+.upload__attached-remove:hover {
+  background: #fde8e8;
+  color: #e53e3e;
+}
 
 /* Кнопка */
 .contact-form__btn {
