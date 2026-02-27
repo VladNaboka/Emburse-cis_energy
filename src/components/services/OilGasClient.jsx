@@ -32,7 +32,7 @@ export default function OilGasClient() {
             </div>
           </div>
           <figure className="svc-card_service__media">
-            <Image src="/images/services_1/block2.png" alt="PSO" width={1200} height={800} style={imgStyle} sizes="(max-width: 768px) 100vw, 50vw" />
+            <Image src={lang === 'en' ? '/images/cis4.svg' : '/images/services_1/block2.png'} alt="PSO" width={1200} height={800} style={imgStyle} sizes="(max-width: 768px) 100vw, 50vw" />
           </figure>
         </article>
 
